@@ -43,7 +43,7 @@
 
 	--loading-size: 120px;
 	--loading-border: 12px;
-	--loading-text-size: 23px;
+	--loading-text-size: 21px;
 }
 
 /* MathJax */
@@ -552,7 +552,7 @@ ol.ol-playlist li.audio-active a {
 @media screen and (max-width: 781px) {
 	/* Body */
 	body {
-		font-size: 10px;
+		font-size: 13px;
 	}
 
 	.page-content {
@@ -569,10 +569,9 @@ ol.ol-playlist li.audio-active a {
 		left: -20px;
 	}
 
-	ul.square ul li::before{
+	ul.square ul li::before {
 		font-size: 8px;
 		left: -10px;
-		top: 1px;
 	}
 
 	ol.ol-custom li.li-custom {
@@ -583,6 +582,7 @@ ol.ol-playlist li.audio-active a {
 
 	ol.ol-custom li.li-custom::before {
 		left: -20px;
+		top: 1px;
 		padding: 1px 2.6px 1px 2.6px;
 		line-height: 12px;
 		border-width: 1px;
@@ -609,21 +609,21 @@ ol.ol-playlist li.audio-active a {
 	}
 
 	div.header h1 a {
-		font-size: 22px;
+		font-size: 26px;
 	}
 
 	@keyframes header-h1-move {
 		from {
-			padding: calc(8px - var(--initial-change) / 2) 0;
+			padding: calc(12px - var(--initial-change) / 2) 0;
 		}
 		to {
-			padding: 8px 0;
+			padding: 12px 0;
 		}
 	}
 
 	/* Sticky Navbar */
 	ul.topnav li a {
-		font-size: 8px;
+		font-size: 13px;
 		padding: 5px;
 	}
 
@@ -639,29 +639,28 @@ ol.ol-playlist li.audio-active a {
 
 	@keyframes icon-move {
 		from {
-			width: calc(20px - var(--initial-change));
-			height: calc(20px - var(--initial-change));
+			width: calc(25px - var(--initial-change));
+			height: calc(25px - var(--initial-change));
 		}
 		to {
-			width: 20px;
-			height: 20px;
+			width: 25px;
+			height: 25px;
 		}
 	}
 
 	.icon-github {
 		right: 11px;
-		bottom: 8.6px;
+		bottom: 8.2px;
 	}
 
 	.icon-facebook {
-		right: 40px;
-		bottom: 8.6px;
+		right: 46px;
+		bottom: 8.2px;
 	}
 
 	/* Dropdowns */
 	.div-hover {
 		margin: 4px 0;
-		font-size: 11px;
 		border-width: 1px;
 		border-radius: 8px;
 		padding: 9px;
@@ -674,7 +673,7 @@ ol.ol-playlist li.audio-active a {
 
 	.div-hover code,
 	.code-hover code {
-		font-size: 8px;
+		font-size: 10px;
 	}
 
 	.span-hover:link,
@@ -727,7 +726,6 @@ ol.ol-playlist li.audio-active a {
 	}
 
 	ol.ol-playlist {
-		font-size: 10px;
 		width: 90%;
 		padding: 5px;
 	}
