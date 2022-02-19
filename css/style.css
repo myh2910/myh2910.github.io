@@ -1,15 +1,5 @@
 :root {
 	/* Colors */
-	--link-color: steelblue;
-	--link-hover-color: cadetblue;
-
-	--h1-color: royalblue;
-	--h2-color: darkcyan;
-	--h3-color: firebrick;
-
-	--header-bgcolor: steelblue;
-	--header-color: #fff;
-
 	--footer-bgcolor: steelblue;
 	--footer-color: #fff;
 
@@ -23,25 +13,16 @@
 	--span-hover-bgcolor: #e06800;
 	--span-hover-color: #fff;
 
-	--dropdown-bgcolor: rgb(230, 230, 230);
-	--dropdown-border: rgb(220, 220, 220);
-	--dropdown-color: rgb(85, 85, 85);
-
 	/* Change them only if necessary! */
-	--body-margin: 16px;
-	--body-margin-android: 8px;
+	--shadow-color: rgba(0, 0, 0, 0.2);
 
-	--code-bgcolor: #333;
-	--code-color: #eaeaea;
-
-	--shadow-color: rgba(0, 0, 0, .2);
-
-	--duration: .4s;
+	--duration: 0.4s;
 	--initial-change: 12px;
 
 	--loading-size: 120px;
 	--loading-border: 12px;
 	--loading-text-size: 21px;
+	--margin: calc(-0.5 * var(--loading-size) - var(--loading-border));
 }
 
 /* MathJax */
@@ -55,13 +36,13 @@
 a:link,
 a:visited {
 	text-decoration: none;
-	color: var(--link-color);
-	transition: .3s;
+	color: steelblue;
+	transition: 0.3s;
 }
 
 a:hover {
 	text-decoration: underline;
-	color: var(--link-hover-color);
+	color: cadetblue;
 }
 
 a:active {
@@ -102,8 +83,7 @@ img.latexcenter {
 .loader-container {
 	display: block;
 	position: fixed;
-	opacity: .5;
-	--margin: calc(-.5*var(--loading-size) - var(--loading-border));
+	opacity: 0.5;
 	top: calc(50% + var(--margin));
 	left: calc(50% + var(--margin));
 	width: var(--loading-size);
@@ -116,12 +96,11 @@ img.latexcenter {
 .loader-circle {
 	display: block;
 	position: fixed;
-	--margin: calc(-.5*var(--loading-size) - var(--loading-border));
 	top: calc(50% + var(--margin));
 	left: calc(50% + var(--margin));
 	width: var(--loading-size);
 	height: var(--loading-size);
-	border: var(--loading-border) solid rgba(0, 0, 0, .2);
+	border: var(--loading-border) solid rgba(0, 0, 0, 0.2);
 	border-radius: 50%;
 	border-top: var(--loading-border) solid var(--nav-active-bgcolor);
 	border-bottom: var(--loading-border) solid var(--nav-active-bgcolor);
@@ -150,7 +129,7 @@ img.latexcenter {
 .page-content {
 	display: none;
 	opacity: 0;
-	margin: 0 var(--body-margin);
+	margin: 0 16px;
 	padding-bottom: 70px;
 	transition: var(--duration);
 }
@@ -158,19 +137,19 @@ img.latexcenter {
 h1,
 h1 a:link,
 h1 a:visited {
-	color: var(--h1-color);
+	color: royalblue;
 }
 
 h2,
 h2 a:link,
 h2 a:visited {
-	color: var(--h2-color);
+	color: darkcyan;
 }
 
 h3,
 h3 a:link,
 h3 a:visited {
-	color: var(--h3-color);
+	color: firebrick;
 }
 
 .right-align {
@@ -257,8 +236,7 @@ ol.ol-a-par li::before {
 .header {
 	display: none;
 	text-align: center;
-	background: var(--header-bgcolor);
-	color: var(--header-color);
+	background: steelblue;
 	margin: 0;
 }
 
@@ -275,7 +253,7 @@ div.header h1 {
 
 div.header h1 a {
 	font-size: 45px;
-	color: var(--header-color);
+	color: #fff;
 }
 
 /* Sticky navigation bar */
@@ -306,7 +284,7 @@ ul.topnav li a {
 	font-size: 15px;
 	padding: 10px;
 	text-decoration: none;
-	transition: .4s;
+	transition: 0.4s;
 }
 
 ul.topnav li a.active {
@@ -375,28 +353,28 @@ li.dropdown {
 	position: absolute;
 	padding: 0;
 	animation: icon-move var(--duration) forwards;
-	transition: .4s;
+	transition: 0.4s;
 }
 
 @keyframes icon-move {
 	from {
-		width: calc(27px - var(--initial-change));
-		height: calc(27px - var(--initial-change));
+		width: calc(25px - var(--initial-change));
+		height: calc(25px - var(--initial-change));
 	}
 	to {
-		width: 27px;
-		height: 27px;
+		width: 25px;
+		height: 25px;
 	}
 }
 
 .icon-github {
-	right: 18px;
-	bottom: 9.5px;
+	right: 15px;
+	bottom: 8px;
 }
 
 .icon-facebook {
-	right: 60px;
-	bottom: 9.5px;
+	right: 55px;
+	bottom: 8px;
 }
 
 /* Dropdowns */
@@ -405,12 +383,12 @@ li.dropdown {
 	position: sticky;
 	margin: 10px 0;
 	text-align: left;
-	color: var(--dropdown-color);
+	color: rgb(85, 85, 85);
 	box-shadow: 0 8px 16px 0 var(--shadow-color);
 	border-style: solid;
 	border-width: 2px;
-	border-color: var(--dropdown-border);
-	background: var(--dropdown-bgcolor);
+	border-color: rgb(220, 220, 220);
+	background: rgb(230, 230, 230);
 	border-radius: 10px;
 	padding: 12px;
 	z-index: 1;
@@ -420,7 +398,7 @@ li.dropdown {
 	max-height: 460px;
 	overflow: auto;
 	white-space: pre-wrap;
-	background: var(--code-bgcolor);
+	background: #333;
 	padding: 0 0 7px 7px;
 }
 
@@ -428,7 +406,7 @@ li.dropdown {
 .code-hover code {
 	text-decoration: none;
 	font-size: 14px;
-	color: var(--code-color);
+	color: #eaeaea;
 }
 
 .span-hover:link,
@@ -491,7 +469,7 @@ li.dropdown {
 	padding: 5px;
 	border-radius: 15px;
 	width: 900px;
-	max-height: 160px;
+	max-height: 170px;
 	margin-bottom: 30px;
 	overflow-y: scroll;
 }
@@ -513,7 +491,7 @@ ol.ol-playlist li {
 ol.ol-playlist li::before {
 	content: counter(playlist-counter) ".";
 	text-align: right;
-	color: white;
+	color: #fff;
 	position: absolute;
 	right: calc(100% + 2px);
 	top: 5px;
@@ -529,7 +507,7 @@ ol.ol-playlist li.audio-active a {
 }
 
 .ol-playlist li a {
-	color: white;
+	color: #fff;
 	padding: 5px;
 	display: block;
 }
@@ -542,7 +520,7 @@ ol.ol-playlist li.audio-active a {
 @media screen and (max-width: 781px) {
 	/* Body */
 	.page-content {
-		margin: 0 var(--body-margin-android);
+		margin: 0 8px;
 		padding-bottom: 52px;
 	}
 
@@ -634,12 +612,12 @@ ol.ol-playlist li.audio-active a {
 
 	.icon-github {
 		right: 11px;
-		bottom: 8.2px;
+		bottom: 9px;
 	}
 
 	.icon-facebook {
-		right: 46px;
-		bottom: 8.2px;
+		right: 47px;
+		bottom: 9px;
 	}
 
 	/* Dropdowns */

@@ -55,11 +55,11 @@ function InitFooter() {
 	$('.footer').html(
 `<span>&copy; 2022 Yohan Min</span>
 <div class="icon icon-github">
-	<a target="_blank" href="https://github.com/myh2910">
+	<a href="https://github.com/myh2910" target="_blank">
 		<svg viewBox="0 0 16 16" aria-hidden="true">
 			<defs>
 				<linearGradient id="gradient-github" x1="50%" x2="50%" y1="97.0782153%" y2="0%">
-					<stop offset="0%" stop-color="black"></stop>
+					<stop offset="0%" stop-color="#000"></stop>
 					<stop offset="100%" stop-color="#24292e"></stop>
 				</linearGradient>
 			</defs>
@@ -69,12 +69,12 @@ function InitFooter() {
 	</a>
 </div>
 <div class="icon icon-facebook">
-	<a target="_blank" href="https://www.facebook.com/myh2910">
+	<a href="https://www.facebook.com/myh2910" target="_blank">
 		<svg viewBox="0 0 36 36" aria-hidden="true">
 			<defs>
 				<linearGradient id="gradient-facebook" x1="50%" x2="50%" y1="97.0782153%" y2="0%">
-					<stop offset="0%" stop-color="#0062E0"></stop>
-					<stop offset="100%" stop-color="#19AFFF"></stop>
+					<stop offset="0%" stop-color="#0062e0"></stop>
+					<stop offset="100%" stop-color="#19afff"></stop>
 				</linearGradient>
 			</defs>
 			<path fill="var(--footer-color)" d="M15 35.8C6.5 34.3 0 26.9 0 18 0 8.1 8.1 0 18 0s18 8.1 18 18c0 8.9-6.5 16.3-15 17.8l-1-.8h-4l-1 .8z"></path>
