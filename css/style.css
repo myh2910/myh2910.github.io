@@ -71,8 +71,8 @@ a:active {
 /* Body */
 body {
 	margin: 0;
-	font-family: "Century Gothic", sans-serif;
-	font-size: 16px;
+	font-family: "Noto Sans", sans-serif;
+	font-size: 15px;
 	color: #121212;
 }
 
@@ -132,7 +132,7 @@ img.latexcenter {
 .loader-text {
 	display: block;
 	position: fixed;
-	font-family: serif;
+	font-family: "Times New Roman", serif;
 	font-size: var(--loading-text-size);
 	z-index: 103;
 }
@@ -216,13 +216,13 @@ ol.ol-custom li.li-custom {
 ol.ol-custom li.li-custom::before {
 	content: counter(list-counter);
 	color: blue;
-	font-family: serif;
+	font-family: "Trebuchet MS", sans-serif;
 	font-weight: bold;
 	position: absolute;
 	left: -36px;
 	top: -1px;
 	padding: 0 5px;
-	line-height: 22px;
+	line-height: 20px;
 	text-align: center;
 	border: solid 2px blue;
 	box-shadow: 2px 2px #999;
@@ -264,7 +264,7 @@ ol.ol-a-par li::before {
 
 div.header h1 {
 	margin: 0;
-	font-family: Roboto;
+	font-family: "Trebuchet MS", sans-serif;
 	animation: header-h1-move var(--duration) forwards;
 }
 
@@ -284,7 +284,7 @@ div.header h1 a {
 }
 
 ul.topnav {
-	font-family: Roboto;
+	font-family: "Roboto", sans-serif;
 	display: none;
 	list-style-type: none;
 	margin: 0;
@@ -352,7 +352,7 @@ li.dropdown {
 .footer {
 	display: none;
 	text-decoration: none;
-	font-family: serif;
+	font-family: "Times New Roman", serif;
 	text-align: center;
 	background: var(--footer-bgcolor);
 	color: var(--footer-color);
@@ -491,10 +491,9 @@ li.dropdown {
 	padding: 5px;
 	border-radius: 15px;
 	width: 900px;
-	max-height: 207px;
+	max-height: 160px;
 	margin-bottom: 30px;
 	overflow-y: scroll;
-	font-family: Garamond;
 }
 
 ol.ol-playlist {
@@ -542,10 +541,6 @@ ol.ol-playlist li.audio-active a {
 
 @media screen and (max-width: 781px) {
 	/* Body */
-	body {
-		font-size: 13px;
-	}
-
 	.page-content {
 		margin: 0 var(--body-margin-android);
 		padding-bottom: 52px;
@@ -568,12 +563,12 @@ ol.ol-playlist li.audio-active a {
 	ol.ol-custom li.li-custom {
 		margin-bottom: 8px;
 		margin-right: -18px;
-		left: -18px;
+		left: -17px;
 	}
 
 	ol.ol-custom li.li-custom::before {
-		left: -20px;
-		top: 1px;
+		left: -22px;
+		top: 2px;
 		padding: 1px 2.6px 1px 2.6px;
 		line-height: 12px;
 		border-width: 1px;
@@ -600,18 +595,18 @@ ol.ol-playlist li.audio-active a {
 	}
 
 	div.header h1 a {
-		font-size: 26px;
+		font-size: 32px;
 	}
 
 	@keyframes header-h1-move {
-		from {padding: calc(12px - var(--initial-change) / 2) 0;}
-		to {padding: 12px 0;}
+		from {padding: calc(14px - var(--initial-change) / 2) 0;}
+		to {padding: 14px 0;}
 	}
 
 	/* Sticky Navbar */
 	ul.topnav li a {
 		font-size: 13px;
-		padding: 5px;
+		padding: 6px;
 	}
 
 	/* Footer */
@@ -709,7 +704,6 @@ ol.ol-playlist li.audio-active a {
 	.div-playlist {
 		padding: 0;
 		width: 100%;
-		max-height: 155px;
 		margin-bottom: 14px;
 		border-radius: 10px;
 	}
