@@ -1,11 +1,12 @@
 InitPlaylist();
 
 function InitPlaylist() {
-	current = 0;
-	audio = $('.audio-playlist');
-	playlist = $('.ol-playlist');
-	tracks = playlist.find('li a');
-	len = tracks.length;
+	let current = 0;
+	let audio = $('.audio-playlist');
+	let playlist = $('.ol-playlist');
+	let tracks = playlist.find('li a');
+	let len = tracks.length;
+	let link;
 	audio[0].volume = 0.7;
 	audio[0].play();
 	playlist.find('a').click(function(e) {
@@ -14,9 +15,9 @@ function InitPlaylist() {
 		current = link.parent().index();
 		RunPlaylist(link, audio[0]);
 	});
-	audio[0].addEventListener('ended', function(e){
+	audio[0].addEventListener('ended', function(e) {
 		current++;
-		if (current == len) {
+		if (current === len) {
 			current = 0;
 			link = playlist.find('a')[0];
 		} else {
@@ -28,8 +29,7 @@ function InitPlaylist() {
 
 function RunPlaylist(link, player) {
 	player.src = link.attr('href');
-	par = link.parent();
-	par.addClass('audio-active').siblings().removeClass('audio-active');
-	audio[0].load();
-	audio[0].play();
+	link.parent().addClass('audio-active').siblings().removeClass('audio-active');
+	player.load();
+	player.play();
 }

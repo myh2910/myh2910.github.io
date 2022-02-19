@@ -48,6 +48,7 @@
 .MathJax {
 	overflow-x: auto;
 	overflow-y: hidden;
+	padding: 1px 0;
 }
 
 /* Links */
@@ -77,6 +78,13 @@ body {
 
 img {
 	max-width: 100%;
+}
+
+img.latexcenter {
+	display: block;
+	margin: auto;
+	padding: 1em 0;
+	box-sizing: content-box;
 }
 
 .loader {
@@ -163,21 +171,10 @@ h3,
 h3 a:link,
 h3 a:visited {
 	color: var(--h3-color);
-	text-align: center;
 }
 
-.date {
+.right-align {
 	font-style: italic;
-	text-align: right;
-}
-
-.proposed {
-	font-style: italic;
-	text-align: right;
-	margin-top: 5px;
-}
-
-.duration {
 	text-align: right;
 }
 
@@ -480,7 +477,7 @@ li.dropdown {
 
 /* Playlist */
 .audio-playlist {
-	background: cornflowerblue;
+	background: mediumturquoise;
 	width: 900px;
 	height: 30px;
 	margin: 30px 0 10px;
@@ -490,13 +487,14 @@ li.dropdown {
 }
 
 .div-playlist {
-	background: cornflowerblue;
+	background: mediumturquoise;
 	padding: 5px;
 	border-radius: 15px;
 	width: 900px;
-	max-height: 178px;
+	max-height: 207px;
 	margin-bottom: 30px;
 	overflow-y: scroll;
+	font-family: Garamond;
 }
 
 ol.ol-playlist {
@@ -518,13 +516,13 @@ ol.ol-playlist li::before {
 	text-align: right;
 	color: white;
 	position: absolute;
-	right: 850px;
-	top: 6px;
+	right: calc(100% + 2px);
+	top: 5px;
 }
 
 ol.ol-playlist li.audio-active::before,
 ol.ol-playlist li.audio-active a {
-	color: palegreen;
+	color: rgba(26, 26, 26, 0.8);
 }
 
 .ol-playlist li.audio-active a {
@@ -624,7 +622,9 @@ ol.ol-playlist li.audio-active a {
 	}
 
 	/* Icon */
-	.icon {animation: icon-move var(--duration) forwards;}
+	.icon {
+		animation: icon-move var(--duration) forwards;
+	}
 
 	@keyframes icon-move {
 		from {
@@ -709,7 +709,7 @@ ol.ol-playlist li.audio-active a {
 	.div-playlist {
 		padding: 0;
 		width: 100%;
-		max-height: 94px;
+		max-height: 155px;
 		margin-bottom: 14px;
 		border-radius: 10px;
 	}
@@ -724,8 +724,8 @@ ol.ol-playlist li.audio-active a {
 	}
 
 	ol.ol-playlist li::before {
-		right: 100%;
-		top: 2.3px;
+		right: calc(100% + 3px);
+		top: 2px;
 	}
 
 	.ol-playlist li a {

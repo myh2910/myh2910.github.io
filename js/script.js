@@ -43,48 +43,17 @@ function InitLoader() {
 	);
 }
 
-function InitBody() {
-	$('.page-content').css('display', 'block');
-	var text_width = $('.loader-text').width();
-	var text_height = $('.loader-text').height();
-	var my_left = 'calc(50% - .5*' + String(text_width) + 'px)';
-	var my_top= 'calc(50% - .5*' + String(text_height) + 'px)';
-	$('.loader-text').css('top', my_top);
-	$('.loader-text').css('left', my_left);
-	var hide_time = 300;
-	var interval = 40;
-	var header_height = String($('.header').height()) + 'px';
-	$(window).on('load', function() {
-		$('.loader-container').get(0).animate(
-			[{'transform': 'scale(.001)', 'opacity': '0'}],
-			{duration: hide_time + interval, easing: 'linear'}
-		);
-		$('.loader').get(0).animate(
-			[{'background': 'var(--header-bgcolor)', 'height': header_height}],
-			{duration: hide_time + interval, easing: 'linear'}
-		);
-		setTimeout(function() {
-			$('.loader-container').remove();
-			$('.loader').remove();
-			$('.page-content').css('opacity', '1');
-			$('.header').css('display', 'block');
-			$('.topnav').css('display', 'flex');
-			$('.footer').css('display', 'block');
-		}, hide_time);
-	});
-}
-
 function InitCode() {
 	codes = $('.code-hover code');
 	source = codes.attr('src');
-	$.get(source, function(data) {
+	$.get(source, (data) => {
 		codes.append(data);
 	});
 }
 
 function InitFooter() {
 	$('.footer').html(
-`&copy; 2022 Yohan Min
+`<span>&copy; 2022 Yohan Min</span>
 <div class="icon icon-github">
 	<a target="_blank" href="https://github.com/myh2910">
 		<svg viewBox="0 0 16 16" aria-hidden="true">
@@ -116,24 +85,49 @@ function InitFooter() {
 	);
 }
 
-// Check if the current link matches with one of the links in navigation bar
+function InitBody(hide_time = 300, interval = 40) {
+	$('.page-content').css('display', 'block');
+	const text_width = $('.loader-text').width();
+	const text_height = $('.loader-text').height();
+	$('.loader-text').css('top', `calc(50% - .5*${text_height}px)`);
+	$('.loader-text').css('left', `calc(50% - .5*${text_width}px)`);
+	$(window).on('load', () => {
+		$('.loader-container').get(0).animate(
+			[{'transform': 'scale(.001)', 'opacity': '0'}],
+			{duration: hide_time + interval, easing: 'linear'}
+		);
+		$('.loader').get(0).animate(
+			[{'background': 'var(--header-bgcolor)', 'height': String($('.header').height()) + 'px'}],
+			{duration: hide_time + interval, easing: 'linear'}
+		);
+		setTimeout(() => {
+			$('.loader-container').remove();
+			$('.loader').remove();
+			$('.page-content').css('opacity', '1');
+			$('.header').css('display', 'block');
+			$('.topnav').css('display', 'flex');
+			$('.footer').css('display', 'block');
+		}, hide_time);
+	});
+}
+
 function CheckCurrLink() {
 	$('.topnav li a.inactive').each(function() {
-		link = $(this);
-		url = link.attr('href');
-		curr_url = window.location.href;
+		let link = $(this);
+		const url = link.attr('href');
+		const curr_url = window.location.href;
 		if (curr_url.indexOf(url) >= 0) {
 			link.attr('class', 'active');
 		} else if (curr_url.slice(-5) !== '.html') {
-			var new_link;
+			let new_link;
 			if (curr_url === 'https://myh2910.github.io/') {
 				new_link = 'index.html';
 			} else if (curr_url.slice(-2) === '/#') {
-				new_link = curr_url.slice(0, -1) + 'index.html';
+				new_link = `${curr_url.slice(0, -1)}index.html`;
 			} else if (curr_url.slice(-1) === '#') {
-				new_link = curr_url.slice(0, -1) + '.html';
+				new_link = `${curr_url.slice(0, -1)}.html`;
 			} else {
-				new_link = curr_url + '.html';
+				new_link = `${curr_url}.html`;
 			}
 			if (new_link.indexOf(url) >= 0) {
 				link.attr('class', 'active');
@@ -142,17 +136,16 @@ function CheckCurrLink() {
 	});
 }
 
-function DropdownClick(){
+function DropdownClick() {
 	$('.a-dropdown').click(function() {
-		link = $(this);
-		link.next().slideToggle('fast');
+		$(this).next().slideToggle('fast');
 		return false;
 	});
 }
 
-function TextClick(){
+function TextClick() {
 	$('.span-hover').click(function() {
-		link = $(this);
+		let link = $(this);
 		link.next().toggle('fast');
 		link.toggleClass('span-hover color-hover');
 		return false;
@@ -161,23 +154,23 @@ function TextClick(){
 
 function IconHover() {
 	$('.icon-facebook').hover(function() {
-		link = $(this).find('svg path');
+		let link = $(this).find('svg path');
 		link.attr('fill', 'url(#gradient-facebook)');
 		link.next().attr('fill', 'white');
 		$(this).css('transform', 'scale(1.25)');
 	}, function() {
-		link = $(this).find('svg path');
+		let link = $(this).find('svg path');
 		link.attr('fill', 'var(--footer-color)');
 		link.next().attr('fill', 'var(--footer-bgcolor)');
 		$(this).css('transform', 'scale(1)');
 	});
 	$('.icon-github').hover(function() {
-		link = $(this).find('svg path');
+		let link = $(this).find('svg path');
 		link.attr('fill', 'white');
 		link.next().attr('fill', 'url(#gradient-github)');
 		$(this).css('transform', 'scale(1.25)');
 	}, function() {
-		link = $(this).find('svg path');
+		let link = $(this).find('svg path');
 		link.attr('fill', 'var(--footer-bgcolor)');
 		link.next().attr('fill', 'var(--footer-color)');
 		$(this).css('transform', 'scale(1)');
