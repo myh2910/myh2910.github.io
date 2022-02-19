@@ -89,11 +89,11 @@ function InitBody(hide_time = 300, interval = 40) {
 	$('.page-content').css('display', 'block');
 	const text_width = $('.loader-text').width();
 	const text_height = $('.loader-text').height();
-	$('.loader-text').css('top', `calc(50% - .5*${text_height}px)`);
-	$('.loader-text').css('left', `calc(50% - .5*${text_width}px)`);
+	$('.loader-text').css('top', `calc(50% - 0.5 * ${text_height}px)`);
+	$('.loader-text').css('left', `calc(50% - 0.5 * ${text_width}px)`);
 	$(window).on('load', () => {
 		$('.loader-container').get(0).animate(
-			[{'transform': 'scale(.001)', 'opacity': '0'}],
+			[{'transform': 'scale(0.001)', 'opacity': '0'}],
 			{duration: hide_time + interval, easing: 'linear'}
 		);
 		$('.loader').get(0).animate(

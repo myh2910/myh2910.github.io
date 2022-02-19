@@ -37,7 +37,7 @@ window.MathJax = {
 			ray: ['\\overrightarrow{#1}', 1],
 			seg: ['\\overline{#1}', 1],
 			arc: ['\\stackrel{\\huge\\frown}{#1}', 1],
-			dg: ['^\\circ'],
+			dg: '^\\circ',
 			empty: '\\varnothing'
 		}
 	}

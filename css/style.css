@@ -54,7 +54,7 @@ body {
 	margin: 0;
 	font-family: "Noto Sans", sans-serif;
 	font-size: 15px;
-	color: #121212;
+	color: #36312d;
 }
 
 img {
@@ -344,7 +344,7 @@ li.dropdown {
 }
 
 @keyframes footer-move {
-	from {padding: calc(12px - var(--initial-change) / 2);}
+	from {padding: calc(12px - 0.5 * var(--initial-change));}
 	to {padding: 12px;}
 }
 
@@ -383,12 +383,12 @@ li.dropdown {
 	position: sticky;
 	margin: 10px 0;
 	text-align: left;
-	color: rgb(85, 85, 85);
+	color: #555;
 	box-shadow: 0 8px 16px 0 var(--shadow-color);
 	border-style: solid;
 	border-width: 2px;
-	border-color: rgb(220, 220, 220);
-	background: rgb(230, 230, 230);
+	border-color: #dcdcdc;
+	background: #e6e6e6;
 	border-radius: 10px;
 	padding: 12px;
 	z-index: 1;
@@ -577,7 +577,7 @@ ol.ol-playlist li.audio-active a {
 	}
 
 	@keyframes header-h1-move {
-		from {padding: calc(14px - var(--initial-change) / 2) 0;}
+		from {padding: calc(14px - 0.5 * var(--initial-change)) 0;}
 		to {padding: 14px 0;}
 	}
 
