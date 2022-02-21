@@ -8,44 +8,41 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<div class="page-container">
-		<div class="page-content">
-			<h1>Classical Music</h1>
-			<span>This is a classical music playlist, taken from <a href="https://imslp.org" target="_blank">IMSLP</a> (as you can see, one of my favorite composers is Tchaikovsky).</span>
-			<audio class="audio-playlist" preload="auto" tabindex="0" controls>
-				<source type="audio/mp3" src="https://s9.imslp.org/files/imglnks/usimg/4/48/IMSLP301686-PMLP02383-Output_1-2.mp3">
-				Sorry, your browser does not support HTML5 audio.
-			</audio>
-			<div class="div-playlist">
-				<ol class="ol-playlist">
-					<li class="audio-active"><a href="https://s9.imslp.org/files/imglnks/usimg/4/48/IMSLP301686-PMLP02383-Output_1-2.mp3">2 Arabesques - Première arabesque (Debussy, Claude)</a></li>
-					<li><a href="https://imslp.hk/files/imglnks/euimg/c/c6/IMSLP725605-PMLP3607-02.03._Waltz_Of_The_Flowers.mp3">The Nutcracker (suite), Op.71a - 3. Valse des fleurs (Tchaikovsky, Pyotr)</a></li>
-					<li><a href="https://imslp.hk/files/imglnks/euimg/6/67/IMSLP563319-PMLP02744-Tcha%C3%AFkovsky_P.I.,_Concerto_for_Piano_and_Orchestra_No._1_in_B_flat_minor_op._23_(Shura_Cherkassy,_piano)_DG_18013_(P)_1952.mp3">Piano Concerto No.1, Op.23 (Tchaikovsky, Pyotr)</a></li>
-					<li><a href="https://imslp.eu/files/imglnks/euimg/c/c3/IMSLP452232-PMLP03312-Tschaikowski_Op35_Ferras_ONRDF_Jochum_09_04_1964.mp3">Violin Concerto, Op.35 (Tchaikovsky, Pyotr)</a></li>
-					<li><a href="https://s9.imslp.org/files/imglnks/usimg/b/bd/IMSLP101492-PMLP01953-Rachmaninov-Op18m1.mp3">Piano Concerto No.2, Op.18 - I. Moderato (Rachmaninoff, Sergei)</a></li>
-					<li><a href="https://s9.imslp.org/files/imglnks/usimg/5/5e/IMSLP101493-PMLP01953-Rachmaninov-Op18m2.mp3">Piano Concerto No.2, Op.18 - II. Adagio sostenuto (Rachmaninoff, Sergei)</a></li>
-					<li><a href="https://s9.imslp.org/files/imglnks/usimg/a/a0/IMSLP101494-PMLP01953-Rachmaninov-Op18m3.mp3">Piano Concerto No.2, Op.18 - III. Allegro scherzando (Rachmaninoff, Sergei)</a></li>
-				</ol>
-			</div>
-			<a class="span-hover" href="#">Here is the list of IMSLP links.</a>
-			<div class="div-hover">
-				<ul>
-					<li><a href="https://imslp.org/wiki/2_Arabesques_(Debussy%2C_Claude)" target=_blank>2 Arabesques (Debussy, Claude)</a></li>
-					<li><a href="https://imslp.org/wiki/The_Nutcracker_(suite)%2C_Op.71a_(Tchaikovsky%2C_Pyotr)" target=_blank>The Nutcracker (suite), Op.71a (Tchaikovsky, Pyotr)</a></li>
-					<li><a href="https://imslp.org/wiki/Piano_Concerto_No.1%2C_Op.23_(Tchaikovsky%2C_Pyotr)" target=_blank>Piano Concerto No.1, Op.23 (Tchaikovsky, Pyotr)</a></li>
-					<li><a href="https://imslp.org/wiki/Violin_Concerto%2C_Op.35_(Tchaikovsky%2C_Pyotr)" target=_blank>Violin Concerto, Op.35 (Tchaikovsky, Pyotr)</a></li>
-					<li>
-						<a href="https://imslp.org/wiki/Piano_Concerto_No.2%2C_Op.18_(Rachmaninoff%2C_Sergei)" target=_blank>Piano Concerto No.2, Op.18 (Rachmaninoff, Sergei)</a>
-						<ol type="I">
-							<li>Moderato</li>
-							<li>Adagio sostenuto</li>
-							<li>Allegro scherzando</li>
-						</ol>
-					</li>
-				</ul>
-			</div>
+	<div class="container">
+		<h1 id="classical-music">Classical Music</h1>
+		<span>This is a classical music playlist, taken from <a href="https://imslp.org" target="_blank">IMSLP</a> (as you can see, one of my favorite composers is Tchaikovsky).</span>
+		<audio class="playlist" preload="auto" tabindex="0" controls>
+			<source type="audio/mp3" src="https://s9.imslp.org/files/imglnks/usimg/4/48/IMSLP301686-PMLP02383-Output_1-2.mp3">
+			Sorry, your browser does not support HTML5 audio.
+		</audio>
+		<div class="playlist">
+			<ol class="playlist">
+				<li class="active-audio"><a href="https://s9.imslp.org/files/imglnks/usimg/4/48/IMSLP301686-PMLP02383-Output_1-2.mp3">2 Arabesques - Première arabesque (Debussy, Claude)</a></li>
+				<li><a href="https://imslp.hk/files/imglnks/euimg/c/c6/IMSLP725605-PMLP3607-02.03._Waltz_Of_The_Flowers.mp3">The Nutcracker (suite), Op.71a - 3. Valse des fleurs (Tchaikovsky, Pyotr)</a></li>
+				<li><a href="https://imslp.hk/files/imglnks/euimg/6/67/IMSLP563319-PMLP02744-Tcha%C3%AFkovsky_P.I.,_Concerto_for_Piano_and_Orchestra_No._1_in_B_flat_minor_op._23_(Shura_Cherkassy,_piano)_DG_18013_(P)_1952.mp3">Piano Concerto No.1, Op.23 (Tchaikovsky, Pyotr)</a></li>
+				<li><a href="https://imslp.eu/files/imglnks/euimg/c/c3/IMSLP452232-PMLP03312-Tschaikowski_Op35_Ferras_ONRDF_Jochum_09_04_1964.mp3">Violin Concerto, Op.35 (Tchaikovsky, Pyotr)</a></li>
+				<li><a href="https://s9.imslp.org/files/imglnks/usimg/b/bd/IMSLP101492-PMLP01953-Rachmaninov-Op18m1.mp3">Piano Concerto No.2, Op.18 - I. Moderato (Rachmaninoff, Sergei)</a></li>
+				<li><a href="https://s9.imslp.org/files/imglnks/usimg/5/5e/IMSLP101493-PMLP01953-Rachmaninov-Op18m2.mp3">Piano Concerto No.2, Op.18 - II. Adagio sostenuto (Rachmaninoff, Sergei)</a></li>
+				<li><a href="https://s9.imslp.org/files/imglnks/usimg/a/a0/IMSLP101494-PMLP01953-Rachmaninov-Op18m3.mp3">Piano Concerto No.2, Op.18 - III. Allegro scherzando (Rachmaninoff, Sergei)</a></li>
+			</ol>
 		</div>
-		<div class="footer"></div>
+		<a class="hide-content" href="#">Here is the list of IMSLP links.</a>
+		<div class="hide-content">
+			<ul>
+				<li><a href="https://imslp.org/wiki/2_Arabesques_(Debussy%2C_Claude)" target=_blank>2 Arabesques (Debussy, Claude)</a></li>
+				<li><a href="https://imslp.org/wiki/The_Nutcracker_(suite)%2C_Op.71a_(Tchaikovsky%2C_Pyotr)" target=_blank>The Nutcracker (suite), Op.71a (Tchaikovsky, Pyotr)</a></li>
+				<li><a href="https://imslp.org/wiki/Piano_Concerto_No.1%2C_Op.23_(Tchaikovsky%2C_Pyotr)" target=_blank>Piano Concerto No.1, Op.23 (Tchaikovsky, Pyotr)</a></li>
+				<li><a href="https://imslp.org/wiki/Violin_Concerto%2C_Op.35_(Tchaikovsky%2C_Pyotr)" target=_blank>Violin Concerto, Op.35 (Tchaikovsky, Pyotr)</a></li>
+				<li>
+					<a href="https://imslp.org/wiki/Piano_Concerto_No.2%2C_Op.18_(Rachmaninoff%2C_Sergei)" target=_blank>Piano Concerto No.2, Op.18 (Rachmaninoff, Sergei)</a>
+					<ol type="I">
+						<li>Moderato</li>
+						<li>Adagio sostenuto</li>
+						<li>Allegro scherzando</li>
+					</ol>
+				</li>
+			</ul>
+		</div>
 	</div>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/playlist.js"></script>

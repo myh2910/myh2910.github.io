@@ -1,10 +1,3 @@
-"""
-Create a new HTML document.
-
-"""
-import os
-
-
 def create_new_page(filename, title, content=None, mathjax=False, playlist=False):
 	"""
 	Generate a new HTML Webpage.
@@ -37,11 +30,8 @@ f"""<!DOCTYPE html>
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<div class="page-container">
-		<div class="page-content">
-			{content}
-		</div>
-		<div class="footer"></div>
+	<div class="container">
+		{content}
 	</div>
 	<script src="js/jquery.min.js"></script>"""
 		)
@@ -56,7 +46,10 @@ f"""<!DOCTYPE html>
 			)
 
 		if playlist:
-			file.write("""\n\t<script src="js/playlist.js"></script>""")
+			file.write(
+"""
+	<script src="js/playlist.js"></script>"""
+			)
 
 		file.write(
 """
