@@ -271,8 +271,12 @@ div.icon {
 	position: absolute;
 	width: 25px;
 	height: 25px;
-	transition: 0.3s;
+	transition: 0.25s;
 	padding: 0;
+}
+
+div.icon:hover {
+	transform: scale(1.2);
 }
 
 div.icon-github {
@@ -482,6 +486,10 @@ ol.playlist li a:hover {
 	div.icon {
 		width: 23px;
 		height: 23px;
+	}
+
+	div.icon:hover {
+		transform: scale(1.1);
 	}
 
 	div.icon-github {

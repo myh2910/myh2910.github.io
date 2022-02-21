@@ -53,6 +53,12 @@ $('div.container').after(
 );
 const footerHeight = $('div.footer').outerHeight();
 $('div.container').css('margin-bottom', `calc(${footerHeight}px + ${$('div.container').css('marginLeft')})`);
+const topnavHeight = $('ul.topnav').outerHeight();
+$('ul.topnav li a').each(function() {
+	if (!$(this).parent().parent().hasClass('dropdown')) {
+		$(this).outerHeight(topnavHeight);
+	}
+});
 $('div.footer div.icon').each(function() {
 	$(this).css('bottom', 0.5 * (footerHeight - $(this).height()));
 });
@@ -131,22 +137,18 @@ function IconHover() {
 		let link = $(this).find('svg path');
 		link.attr('fill', 'url(#gradient-facebook)');
 		link.next().attr('fill', '#fff');
-		$(this).css('transform', 'scale(1.1)');
 	}, function() {
 		let link = $(this).find('svg path');
 		link.attr('fill', 'var(--footer-color)');
 		link.next().attr('fill', 'var(--footer-bgcolor)');
-		$(this).css('transform', 'scale(1)');
 	});
 	$('div.icon-github').hover(function() {
 		let link = $(this).find('svg path');
 		link.attr('fill', '#fff');
 		link.next().attr('fill', 'url(#gradient-github)');
-		$(this).css('transform', 'scale(1.1)');
 	}, function() {
 		let link = $(this).find('svg path');
 		link.attr('fill', 'var(--footer-bgcolor)');
 		link.next().attr('fill', 'var(--footer-color)');
-		$(this).css('transform', 'scale(1)');
 	});
 }
