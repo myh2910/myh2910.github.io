@@ -214,6 +214,7 @@ ul.topnav li {
 
 ul.topnav li a {
 	display: inline-block;
+	height: calc(100% - 20px);
 	padding: 10px;
 	font-size: 15px;
 	text-decoration: none;
@@ -473,6 +474,7 @@ ol.playlist li a:hover {
 
 	/* Sticky navigation bar */
 	ul.topnav li a {
+		height: calc(100% - 14px);
 		padding: 7px;
 		font-size: 13px;
 	}

@@ -53,12 +53,6 @@ $('div.container').after(
 );
 const footerHeight = $('div.footer').outerHeight();
 $('div.container').css('margin-bottom', `calc(${footerHeight}px + ${$('div.container').css('marginLeft')})`);
-const topnavHeight = $('ul.topnav').outerHeight();
-$('ul.topnav li a').each(function() {
-	if (!$(this).parent().parent().hasClass('dropdown')) {
-		$(this).outerHeight(topnavHeight);
-	}
-});
 $('div.footer div.icon').each(function() {
 	$(this).css('bottom', 0.5 * (footerHeight - $(this).height()));
 });
