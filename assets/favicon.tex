@@ -4,8 +4,8 @@
 \begin{document}
 \begin{figure}
 	\begin{asy}
-		size(6cm);
 		import olympiad;
+		size(6cm);
 
 		pair O = origin;
 		pair A = dir(126.65);
@@ -21,11 +21,11 @@
 
 		real a = 1.2;
 		filldraw(box((-a, -a), (a, a)), white, white);
-		filldraw(unitcircle, opacity(.3)+lightcyan, deepblue);
-		filldraw(A--B--C--cycle, opacity(.2)+red, red);
-		filldraw(circle(OA, abs(N-OA)), opacity(.3)+lightgreen, cyan+blue);
+		filldraw(unitcircle, opacity(0.3)+lightcyan, deepblue);
+		filldraw(A--B--C--cycle, opacity(0.2)+red, red);
+		filldraw(circle(OA, abs(N-OA)), opacity(0.3)+lightgreen, cyan+blue);
 
-		markscalefactor = .01;
+		markscalefactor = 0.01;
 		draw(rightanglemark(N, I, A), brown);
 
 		draw(MA--MB, dotted);
