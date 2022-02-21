@@ -5,5 +5,5 @@ This is the first website created by me.
 ## Notes
 
 - CSS rule order from <https://9elements.com/css-rule-order/>.
-- If you are using Firefox Android, go to Settings -> Customize -> Gestures and
-	unselect "Scroll to hide toolbar".
+- If you are using Firefox Android, go to `Settings -> Customize -> Gestures`
+	and unselect `Scroll to hide toolbar` mode.
