@@ -22,8 +22,8 @@
 
 body {
 	margin: 0;
-	font-family: "Noto Sans", sans-serif;
 	font-size: 15px;
+	font-family: "Noto Sans", sans-serif;
 	color: #36312d;
 }
 
@@ -38,7 +38,12 @@ div.right-align {
 	text-align: right;
 }
 
-/* Images */
+code {
+	margin: 0 3px;
+	font-size: 90%;
+	font-family: monospace;
+}
+
 img {
 	max-width: 100%;
 }
