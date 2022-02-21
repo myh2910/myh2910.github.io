@@ -1,4 +1,10 @@
-def create_new_page(filename, title, content=None, mathjax=False, playlist=False):
+def create_new_page(
+	filename,
+	title,
+	content=None,
+	mathjax=False,
+	playlist=False
+):
 	"""
 	Generate a new HTML Webpage.
 

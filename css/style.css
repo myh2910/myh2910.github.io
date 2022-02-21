@@ -1,12 +1,12 @@
 :root {
 	/* Colors */
+	--active-bgcolor: royalblue;
+	--active-color: #fff;
+	--inactive-bgcolor: cornflowerblue;
+	--inactive-color: #fff;
+
 	--footer-bgcolor: steelblue;
 	--footer-color: #fff;
-
-	--nav-active-bgcolor: royalblue;
-	--nav-active-color: #fff;
-	--nav-inactive-bgcolor: cornflowerblue;
-	--nav-inactive-color: #fff;
 
 	--hide-text-bgcolor: #f9e1cc;
 	--hide-text-color: #e06800;
@@ -29,8 +29,8 @@ body {
 
 div.container {
 	opacity: 0;
-	margin: 0 16px;
 	transition: 0.1s;
+	margin: 0 16px;
 }
 
 div.right-align {
@@ -46,8 +46,8 @@ img {
 img.latexcenter {
 	display: block;
 	margin: 5px auto;
-	padding: 1em 0;
 	box-sizing: content-box;
+	padding: 1em 0;
 }
 
 /* Links */
@@ -87,8 +87,8 @@ h3 a:visited {
 }
 
 a.hash-link {
-	margin-left: 7px;
 	opacity: 0.2;
+	margin-left: 7px;
 	text-shadow: 0 0 5px #ff0;
 }
 
@@ -110,13 +110,13 @@ ul.square ul li {
 	position: relative;
 }
 
-ul.square ul li::before {
+ul.square ul li:before {
 	content: "\25A1";
+	position: absolute;
+	top: 2px;
+	left: -20px;
 	font-size: 15px;
 	text-align: center;
-	position: absolute;
-	left: -20px;
-	top: 2px;
 }
 
 ol.custom {
@@ -125,26 +125,26 @@ ol.custom {
 }
 
 ol.custom li.custom {
-	margin-bottom: 15px;
-	margin-right: 10px;
 	counter-increment: list-counter;
 	position: relative;
 	left: 10px;
+	margin-bottom: 15px;
+	margin-right: 10px;
 }
 
-ol.custom li.custom::before {
+ol.custom li.custom:before {
 	content: counter(list-counter);
-	color: #00f;
-	font-family: "Trebuchet MS", sans-serif;
-	font-weight: bold;
 	position: absolute;
-	left: -36px;
 	top: -1px;
+	left: -36px;
+	box-shadow: 2px 2px #999;
+	border: solid 2px #00f;
 	padding: 0 5px;
 	line-height: 20px;
+	font-family: "Trebuchet MS", sans-serif;
+	font-weight: bold;
 	text-align: center;
-	border: solid 2px #00f;
-	box-shadow: 2px 2px #999;
+	color: #00f;
 }
 
 ul.custom-square {
@@ -162,11 +162,11 @@ ol.par-alpha {
 
 ol.par-alpha li {
 	counter-increment: list-counter;
-	padding: 7px 0;
 	position: relative;
+	padding: 7px 0;
 }
 
-ol.par-alpha li::before {
+ol.par-alpha li:before {
 	content: counter(list-counter, lower-alpha) ")";
 	position: absolute;
 	left: -26px;
@@ -175,8 +175,8 @@ ol.par-alpha li::before {
 /* Header */
 div.header {
 	margin: 0;
-	text-align: center;
 	background: steelblue;
+	text-align: center;
 }
 
 div.header h1 {
@@ -192,15 +192,15 @@ div.header h1 a {
 
 /* Sticky navigation bar */
 ul.topnav {
-	display: flex;
 	position: sticky;
+	z-index: 2;
+	top: 0;
+	display: flex;
 	margin: 0;
 	padding: 0;
-	top: 0;
+	background: var(--inactive-bgcolor);
 	font-family: "Roboto", sans-serif;
-	background: var(--nav-inactive-bgcolor);
 	list-style-type: none;
-	z-index: 2;
 }
 
 ul.topnav li {
@@ -212,33 +212,33 @@ ul.topnav li a {
 	padding: 10px;
 	font-size: 15px;
 	text-decoration: none;
-	color: var(--nav-inactive-color);
+	color: var(--inactive-color);
 }
 
 ul.topnav li a.active {
-	background: var(--nav-active-bgcolor);
-	color: var(--nav-active-color);
+	background: var(--active-bgcolor);
+	color: var(--active-color);
 }
 
 ul.topnav li a.inactive:hover {
-	background: var(--nav-active-bgcolor);
-	color: var(--nav-active-color);
+	background: var(--active-bgcolor);
+	color: var(--active-color);
 }
 
 ul.topnav li.dropdown {
-	display: inline-block;
 	position: relative;
+	display: inline-block;
 }
 
 li.dropdown ul.dropdown {
-	display: none;
 	position: absolute;
-	overflow: hidden;
-	padding: 0;
 	left: 0;
 	right: 0;
-	background: var(--nav-inactive-bgcolor);
+	display: none;
+	overflow: hidden;
 	box-shadow: 0 8px 16px 0 var(--shadow-color);
+	padding: 0;
+	background: var(--inactive-bgcolor);
 	list-style-type: none;
 }
 
@@ -254,133 +254,131 @@ div.footer {
 	left: 0;
 	right: 0;
 	padding: 12px;
+	background: var(--footer-bgcolor);
+	font-family: "Times New Roman", serif;
 	text-align: center;
 	text-decoration: none;
-	font-family: "Times New Roman", serif;
-	background: var(--footer-bgcolor);
 	color: var(--footer-color);
 }
 
 /* Icon */
 div.icon {
 	position: absolute;
-	padding: 0;
+	bottom: 8px;
 	width: 25px;
 	height: 25px;
 	transition: 0.3s;
+	padding: 0;
 }
 
 div.icon-github {
 	right: 15px;
-	bottom: 8px;
 }
 
 div.icon-facebook {
 	right: 55px;
-	bottom: 8px;
 }
 
 /* Dropdown */
 div.hide-content {
-	display: none;
 	position: sticky;
+	display: none;
 	margin: 10px 0;
-	text-align: left;
-	color: #555;
 	box-shadow: 0 8px 16px 0 var(--shadow-color);
-	border-style: solid;
-	border-width: 2px;
-	border-color: #dcdcdc;
-	background: #e6e6e6;
+	border: 2px solid #dcdcdc;
 	border-radius: 10px;
 	padding: 12px;
+	background: #e6e6e6;
+	text-align: left;
+	color: #555;
 }
 
 div.hide-content code {
-	text-decoration: none;
 	font-size: 14px;
+	text-decoration: none;
 	color: #eaeaea;
 }
 
 a.hide-content:link,
 a.hide-content:visited {
-	padding: 0 4px;
 	border-radius: 3px;
+	padding: 0 4px;
 	background: var(--hide-text-bgcolor);
-	color: var(--hide-text-color);
 	text-decoration: none;
+	color: var(--hide-text-color);
 }
 
 a.hide-content:hover {
 	background: var(--hide-text-color);
-	color: #fff;
 	text-decoration: none;
+	color: #fff;
 }
 
 /* Iframe */
 div.iframe {
 	position: relative;
 	overflow: hidden;
-	width: 800px;
-	padding-top: 450px;
 	margin: 18px 0;
+	max-width: 800px;
+	padding-top: 450px;
 }
 
 iframe.responsive-iframe {
 	position: absolute;
 	top: 0;
-	left: 0;
 	bottom: 0;
+	left: 0;
 	right: 0;
+	border-width: 0;
 	width: 100%;
 	height: 100%;
-	border-width: 0;
 }
 
 /* Playlist */
 audio.playlist {
-	background: mediumturquoise;
-	width: 900px;
-	height: 30px;
 	margin: 30px 0 10px;
-	padding: 3px;
 	border-radius: 40px;
+	width: calc(900px - 6px);
+	height: 30px;
+	padding: 3px;
+	background: mediumturquoise;
 }
 
 div.playlist {
-	background: mediumturquoise;
-	padding: 5px;
+	overflow-y: scroll;
+	margin-bottom: 30px;
 	border-radius: 15px;
 	width: 900px;
 	max-height: 170px;
-	margin-bottom: 30px;
-	overflow-y: scroll;
+	padding: 5px;
+	background: mediumturquoise;
 }
 
 ol.playlist {
-	width: 850px;
-	padding: 5px;
 	counter-reset: playlist-counter;
-	list-style: none;
 	margin: 0;
+	width: calc(100% - 10px);
+	padding: 5px;
+	list-style: none;
 }
 
 ol.playlist li {
 	counter-increment: playlist-counter;
 	position: relative;
 	left: 32px;
+	width: calc(100% - 32px);
 }
 
-ol.playlist li::before {
+ol.playlist li:before {
 	content: counter(playlist-counter) ".";
+	position: absolute;
+	top: 5px;
+	right: calc(100% + 2px);
 	text-align: right;
 	color: #fff;
-	position: absolute;
-	right: calc(100% + 2px);
-	top: 5px;
 }
 
-ol.playlist li.active-audio::before,
+ol.playlist li.active-audio:before,
 ol.playlist li.active-audio a {
 	color: #003c3c;
 }
@@ -391,14 +389,25 @@ ol.playlist li.active-audio a {
 }
 
 ol.playlist li a {
-	color: #fff;
-	padding: 5px;
 	display: block;
+	padding: 5px;
+	color: #fff;
 }
 
 ol.playlist li a:hover {
 	text-decoration: none;
 	text-shadow: 0 0 3px;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+	audio.playlist {
+		margin: 30px 0 6px;
+		width: calc(100% - 6px);
+	}
+
+	div.playlist {
+		width: calc(100% - 10px);
+	}
 }
 
 @media (max-width: 767px) {
@@ -411,24 +420,24 @@ ol.playlist li a:hover {
 		left: -20px;
 	}
 
-	ul.square ul li::before {
-		font-size: 8px;
+	ul.square ul li:before {
 		left: -10px;
+		font-size: 8px;
 	}
 
 	ol.custom li.custom {
+		left: -17px;
 		margin-bottom: 8px;
 		margin-right: -18px;
-		left: -17px;
 	}
 
-	ol.custom li.custom::before {
-		left: -22px;
+	ol.custom li.custom:before {
 		top: 2px;
+		left: -22px;
+		box-shadow: 1px 1px #999;
+		border-width: 1px;
 		padding: 1px 2.6px 1px 2.6px;
 		line-height: 12px;
-		border-width: 1px;
-		box-shadow: 1px 1px #999;
 	}
 
 	ul.custom-square li {
@@ -441,7 +450,7 @@ ol.playlist li a:hover {
 		padding: 5px 0;
 	}
 
-	ol.par-alpha li::before {
+	ol.par-alpha li:before {
 		left: -15px;
 	}
 
@@ -456,8 +465,8 @@ ol.playlist li a:hover {
 
 	/* Sticky navigation bar */
 	ul.topnav li a {
+		padding: 7px;
 		font-size: 13px;
-		padding: 6px;
 	}
 
 	/* Footer */
@@ -467,18 +476,17 @@ ol.playlist li a:hover {
 
 	/* Icon */
 	div.icon {
-		width: 24px;
-		height: 24px;
+		bottom: 5.6px;
+		width: 23px;
+		height: 23px;
 	}
 
 	div.icon-github {
 		right: 11px;
-		bottom: 4.5px;
 	}
 
 	div.icon-facebook {
-		right: 47px;
-		bottom: 4.5px;
+		right: 46px;
 	}
 
 	/* Dropdown */
@@ -495,64 +503,41 @@ ol.playlist li a:hover {
 
 	a.hide-content:link,
 	a.hide-content:visited {
-		padding: 0 2px;
 		border-radius: 2px;
-	}
-
-	a.hide-content:hover {
-		background: var(--hide-text-bgcolor);
-		color: var(--hide-text-color);
-		text-decoration: none;
+		padding: 0 2px;
 	}
 
 	/* Iframe */
 	div.iframe {
-		position: relative;
-		overflow: hidden;
+		margin: 8px 0;
 		width: 100%;
 		padding-top: 56.25%;
-		margin-top: 8px;
-		margin-bottom: 8px;
-	}
-
-	iframe.responsive-iframe {
-		position: absolute;
-		top: 0;
-		left: 0;
-		bottom: 0;
-		right: 0;
-		width: 100%;
-		height: 100%;
 	}
 
 	/* Playlist */
 	audio.playlist {
-		width: 99%;
-		height: 24px;
-		margin: 14px 0 5px;
-		padding: 2px;
+		margin: 14px 0 1px;
 		border-radius: 20px;
+		width: calc(100% - 4px);
+		height: 24px;
+		padding: 2px;
 	}
 
 	div.playlist {
-		padding: 0;
-		width: 100%;
 		margin-bottom: 14px;
 		border-radius: 10px;
-	}
-
-	ol.playlist {
-		width: 90%;
-		padding: 5px;
+		width: calc(100% - 4px);
+		padding: 2px;
 	}
 
 	ol.playlist li {
 		left: 20px;
+		width: calc(100% - 20px);
 	}
 
-	ol.playlist li::before {
-		right: calc(100% + 3px);
+	ol.playlist li:before {
 		top: 2px;
+		right: calc(100% + 3px);
 	}
 
 	ol.playlist li a {
