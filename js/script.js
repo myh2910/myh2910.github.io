@@ -51,7 +51,11 @@ $('div.container').after(
 	</div>
 </div>`
 );
-$('div.container').css('margin-bottom', `calc(${$('div.footer').outerHeight()}px + ${$('div.container').css('marginLeft')})`);
+const footerHeight = $('div.footer').outerHeight();
+$('div.container').css('margin-bottom', `calc(${footerHeight}px + ${$('div.container').css('marginLeft')})`);
+$('div.footer div.icon').each(function() {
+	$(this).css('bottom', 0.5 * (footerHeight - $(this).height()));
+});
 $('div.container').css('opacity', '1');
 
 CheckLocation();
@@ -61,7 +65,7 @@ HideContentClick();
 IconHover();
 
 function CheckLocation() {
-	let hash = window.location.hash;
+	const hash = window.location.hash;
 	if (hash) {
 		let target = $(hash);
 		$(window).on('load', () => {
@@ -96,7 +100,7 @@ function CheckLocation() {
 
 function HashLinkClick() {
 	$('div.container').find('h1, h2, h3').each(function() {
-		let id = $(this).attr('id');
+		const id = $(this).attr('id');
 		if (id) {
 			$(this).append(`<a class="hash-link" href="#${id}">#</a>`);
 		}

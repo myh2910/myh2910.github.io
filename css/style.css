@@ -269,7 +269,6 @@ div.footer {
 /* Icon */
 div.icon {
 	position: absolute;
-	bottom: 8px;
 	width: 25px;
 	height: 25px;
 	transition: 0.3s;
@@ -481,7 +480,6 @@ ol.playlist li a:hover {
 
 	/* Icon */
 	div.icon {
-		bottom: 5.6px;
 		width: 23px;
 		height: 23px;
 	}
