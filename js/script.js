@@ -51,35 +51,26 @@ $('div.container').after(
 	</div>
 </div>`
 );
-const footerHeight = $('div.footer').outerHeight();
-$('div.container').css('margin-bottom', `calc(${footerHeight}px + ${$('div.container').css('marginLeft')})`);
-$('div.footer div.icon').each(function() {
-	$(this).css('bottom', 0.5 * (footerHeight - $(this).height()));
-});
-$('div.container').css('opacity', '1');
 
-CheckLocation();
-HashLinkClick();
+InitPage();
+HashLink();
 DropdownClick();
 HideContentClick();
 IconHover();
 
-function CheckLocation() {
-	const hash = window.location.hash;
-	if (hash) {
-		let target = $(hash);
-		$(window).on('load', () => {
-			$('html').animate({
-				scrollTop: target.offset().top - target.find('a.hash-link').height()
-			}, 'fast');
-		});
-	}
+function InitPage() {
+	const footerHeight = $('div.footer').outerHeight();
+	$('div.container').css('margin-bottom', `calc(${footerHeight}px + ${$('div.container').css('marginLeft')})`);
+	$('div.footer div.icon').each(function() {
+		$(this).css('bottom', 0.5 * (footerHeight - $(this).height()));
+	});
 	const href = window.location.href;
 	$('ul.topnav li a.inactive').each(function() {
 		let link = $(this);
 		const url = link.attr('href');
 		if (href.indexOf(url) >= 0) {
 			link.attr('class', 'active');
+			return false;
 		} else if (href.slice(-5) !== '.html') {
 			let new_link;
 			if (href === 'https://myh2910.github.io/') {
@@ -93,18 +84,29 @@ function CheckLocation() {
 			}
 			if (new_link.indexOf(url) >= 0) {
 				link.attr('class', 'active');
+				return false;
 			}
 		}
 	});
 }
 
-function HashLinkClick() {
+function HashLink() {
 	$('div.container').find('h1, h2, h3').each(function() {
 		const id = $(this).attr('id');
 		if (id) {
 			$(this).append(`<a class="hash-link" href="#${id}">#</a>`);
 		}
 	});
+	$('div.container').css('display', 'block');
+	const hash = window.location.hash;
+	if (hash) {
+		let target = $(hash);
+		$(window).on('load', () => {
+			$('html').animate({
+				scrollTop: target.offset().top - target.find('a.hash-link').height()
+			}, 'fast');
+		});
+	}
 	$('a.hash-link').click(function() {
 		$('html').animate({
 			scrollTop: $(this).parent().offset().top - $(this).height()

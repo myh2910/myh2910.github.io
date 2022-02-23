@@ -28,8 +28,7 @@ body {
 }
 
 div.container {
-	opacity: 0;
-	transition: 0.1s;
+	display: none;
 	margin: 0 16px;
 }
 
@@ -60,7 +59,6 @@ a:link,
 a:visited {
 	text-decoration: none;
 	color: steelblue;
-	transition: 0.2s;
 }
 
 a:hover {
@@ -111,11 +109,11 @@ ul.square ul {
 	list-style: none;
 }
 
-ul.square ul li {
+ul.square ul > li {
 	position: relative;
 }
 
-ul.square ul li:before {
+ul.square ul > li:before {
 	content: "\25A1";
 	position: absolute;
 	top: 2px;
@@ -129,7 +127,7 @@ ol.custom {
 	list-style: none;
 }
 
-ol.custom li.custom {
+ol.custom > li {
 	counter-increment: list-counter;
 	position: relative;
 	left: 10px;
@@ -137,7 +135,7 @@ ol.custom li.custom {
 	margin-right: 10px;
 }
 
-ol.custom li.custom:before {
+ol.custom > li:before {
 	content: counter(list-counter);
 	position: absolute;
 	top: -1px;
@@ -156,7 +154,7 @@ ul.custom-square {
 	list-style: square;
 }
 
-ul.custom-square li {
+ul.custom-square > li {
 	padding: 7px 0;
 }
 
@@ -165,13 +163,13 @@ ol.par-alpha {
 	list-style: none;
 }
 
-ol.par-alpha li {
+ol.par-alpha > li {
 	counter-increment: list-counter;
 	position: relative;
 	padding: 7px 0;
 }
 
-ol.par-alpha li:before {
+ol.par-alpha > li:before {
 	content: counter(list-counter, lower-alpha) ")";
 	position: absolute;
 	left: -26px;
@@ -198,7 +196,7 @@ div.header h1 a {
 /* Sticky navigation bar */
 ul.topnav {
 	position: sticky;
-	z-index: 2;
+	z-index: 4;
 	top: 0;
 	display: flex;
 	margin: 0;
@@ -221,11 +219,7 @@ ul.topnav li a {
 	color: var(--inactive-color);
 }
 
-ul.topnav li a.active {
-	background: var(--active-bgcolor);
-	color: var(--active-color);
-}
-
+ul.topnav li a.active,
 ul.topnav li a.inactive:hover {
 	background: var(--active-bgcolor);
 	color: var(--active-color);
@@ -256,6 +250,7 @@ li.dropdown ul.dropdown a {
 /* Footer */
 div.footer {
 	position: fixed;
+	z-index: 3;
 	bottom: 0;
 	left: 0;
 	right: 0;
@@ -425,22 +420,22 @@ ol.playlist li a:hover {
 	}
 
 	/* Lists */
-	ul.square ul li {
+	ul.square ul > li {
 		left: -20px;
 	}
 
-	ul.square ul li:before {
+	ul.square ul > li:before {
 		left: -10px;
 		font-size: 8px;
 	}
 
-	ol.custom li.custom {
+	ol.custom > li {
 		left: -17px;
 		margin-bottom: 8px;
 		margin-right: -18px;
 	}
 
-	ol.custom li.custom:before {
+	ol.custom > li:before {
 		top: 2px;
 		left: -22px;
 		box-shadow: 1px 1px #999;
@@ -449,17 +444,17 @@ ol.playlist li a:hover {
 		line-height: 12px;
 	}
 
-	ul.custom-square li {
+	ul.custom-square > li {
 		margin-left: -17px;
 		padding: 5px 0;
 	}
 
-	ol.par-alpha li {
+	ol.par-alpha > li {
 		margin-left: -17px;
 		padding: 5px 0;
 	}
 
-	ol.par-alpha li:before {
+	ol.par-alpha > li:before {
 		left: -15px;
 	}
 
