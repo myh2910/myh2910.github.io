@@ -263,7 +263,7 @@ div.footer {
 }
 
 /* Icon */
-div.icon {
+div.footer div.icon {
 	position: absolute;
 	width: 25px;
 	height: 25px;
@@ -271,7 +271,7 @@ div.icon {
 	padding: 0;
 }
 
-div.icon:hover {
+div.footer div.icon:hover {
 	transform: scale(1.2);
 }
 
