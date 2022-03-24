@@ -2,9 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-/* @const
-* Add matching sprite definition and config to Runner.spriteDefinitionByType.
-*/
+/** 
+ * Add matching sprite definition and config to Runner.spriteDefinitionByType.
+ * @const
+ */
 const GAME_TYPE = [];
 
 /**

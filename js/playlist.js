@@ -1,24 +1,22 @@
 $('audio.playlist').each(function() {
 	let audio = this;
-	let curr = 0;
-	let playlist = $(this).next().children();
-	const len = playlist.find('li a').length;
+	let playlist = $(audio).next().children();
 
+	const len = playlist.find('li a').length;
+	const active = playlist.find('li.active-audio a');
+	let curr = active.index();
+	audio.src = active.attr('href');
 	audio.volume = 0.75;
-	// audio.play();
+
+	audio.addEventListener('ended', () => {
+		curr = (curr + 1) % len;
+		PlayAudio($(playlist.find('a')[curr]), audio);
+	});
 
 	playlist.find('a').click(function(e) {
 		e.preventDefault();
 		curr = $(this).parent().index();
 		PlayAudio($(this), audio);
-	});
-
-	audio.addEventListener('ended', () => {
-		curr++;
-		if (curr === len) {
-			curr = 0;
-		}
-		PlayAudio($(playlist.find('a')[curr]), audio);
 	});
 });
 

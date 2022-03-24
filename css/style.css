@@ -1,16 +1,12 @@
 :root {
-	/* Colors */
 	--active-bgcolor: royalblue;
 	--active-color: #fff;
 	--inactive-bgcolor: cornflowerblue;
 	--inactive-color: #fff;
-
 	--footer-bgcolor: steelblue;
 	--footer-color: #fff;
-
 	--hide-text-bgcolor: #f9e1cc;
 	--hide-text-color: #e06800;
-
 	--shadow-color: rgba(0, 0, 0, 0.2);
 }
 
@@ -256,7 +252,7 @@ div.footer {
 	right: 0;
 	padding: 12px;
 	background: var(--footer-bgcolor);
-	font-family: "Times New Roman", serif;
+	font-family: "Trebuchet MS", sans-serif;
 	text-align: center;
 	text-decoration: none;
 	color: var(--footer-color);
@@ -340,6 +336,7 @@ iframe.responsive-iframe {
 
 /* Playlist */
 audio.playlist {
+	display: block;
 	margin: 30px 0 10px;
 	border-radius: 40px;
 	width: calc(900px - 6px);

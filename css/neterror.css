@@ -4,13 +4,13 @@
 
 #main-content h1 {
 	margin-top: 0;
+	margin-bottom: 16px;
+	font-size: 1.6em;
+	line-height: 1.25em;
+	font-family: "Segoe UI", sans-serif;
+	font-weight: normal;
 	word-wrap: break-word;
 	color: var(--heading-color);
-	font-size: 1.6em;
-	font-weight: normal;
-	font-family: "Segoe UI", sans-serif;
-	line-height: 1.25em;
-	margin-bottom: 16px;
 }
 
 #main-content h1 span {
@@ -18,15 +18,15 @@
 }
 
 #main-content .icon {
-	height: 72px;
 	margin: 0 0 26px;
 	width: 72px;
+	height: 72px;
 }
 
 .icon-offline {
 	content: -webkit-image-set(
-			url("../assets/100-error-offline.png") 1x,
-			url("../assets/200-error-offline.png") 2x);
+		url("../assets/100-error-offline.png") 1x,
+		url("../assets/200-error-offline.png") 2x);
 	position: relative;
 }
 
@@ -44,7 +44,7 @@
 /* Offline page */
 .offline {
 	transition: filter 1.5s cubic-bezier(0.65, 0.05, 0.36, 1),
-							background-color 1.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+		background-color 1.5s cubic-bezier(0.65, 0.05, 0.36, 1);
 }
 
 .offline > div {
@@ -61,22 +61,22 @@
 }
 
 .offline .interstitial-wrapper {
-	color: var(--text-color);
+	position: relative;
+	margin: 0 auto;
+	width: calc(100% - 8px);
+	max-width: 600px;
+	height: 150px;
+	padding: 100px 4px 0;
 	font-size: 1em;
 	line-height: 1.55;
-	margin: 0 auto;
-	max-width: 600px;
-	padding: 100px 4px 0;
-	position: relative;
-	width: calc(100% - 8px);
-	height: 150px;
+	color: var(--text-color);
 }
 
 .offline .runner-container {
 	direction: ltr;
 	position: absolute;
-	overflow: hidden;
 	top: 35px;
+	overflow: hidden;
 	width: 44px;
 	max-width: 600px;
 	height: 150px;
@@ -105,35 +105,35 @@
 }
 
 .offline-runner-live-region {
-	bottom: 0;
-	clip-path: polygon(0 0, 0 0, 0 0);
-	color: var(--background-color);
-	display: block;
-	font-size: xx-small;
-	overflow: hidden;
 	position: absolute;
-	text-align: center;
+	bottom: 0;
+	display: block;
+	overflow: hidden;
+	clip-path: polygon(0 0, 0 0, 0 0);
 	transition: color 1.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+	font-size: xx-small;
+	text-align: center;
+	color: var(--background-color);
 	user-select: none;
 }
 
 /* Custom toggle */
 .slow-speed-option {
-	align-items: center;
-	background: var(--google-gray-50);
-	border-radius: 24px/50%;
-	bottom: 0;
-	color: var(--error-code-color);
-	display: inline-flex;
-	font-size: 1em;
-	left: 0;
-	line-height: 1.1em;
-	margin: 5px auto;
-	padding: 2px 12px 3px 20px;
 	position: absolute;
-	right: 0;
-	width: max-content;
 	z-index: 2;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	align-items: center;
+	display: inline-flex;
+	margin: 5px auto;
+	border-radius: 24px / 50%;
+	width: max-content;
+	padding: 2px 12px 3px 20px;
+	background: var(--google-gray-50);
+	font-size: 1em;
+	line-height: 1.1em;
+	color: var(--error-code-color);
 }
 
 .slow-speed-option.hidden {
@@ -141,16 +141,16 @@
 }
 
 .slow-speed-option [type=checkbox] {
+	position: absolute;
 	opacity: 0;
 	pointer-events: none;
-	position: absolute;
 }
 
 .slow-speed-option .slow-speed-toggle {
-	cursor: pointer;
+	position: relative;
 	margin-inline-start: 8px;
 	padding: 8px 4px;
-	position: relative;
+	cursor: pointer;
 }
 
 .slow-speed-option [type=checkbox]:disabled ~ .slow-speed-toggle {
@@ -158,35 +158,35 @@
 }
 
 .slow-speed-option-label [type=checkbox] {
+	position: absolute;
 	opacity: 0;
 	pointer-events: none;
-	position: absolute;
 }
 
 .slow-speed-option .slow-speed-toggle::before,
 .slow-speed-option .slow-speed-toggle::after {
 	content: "";
 	display: block;
-	margin: 0 3px;
 	transition: all 100ms cubic-bezier(0.4, 0, 1, 1);
+	margin: 0 3px;
 }
 
 .slow-speed-option .slow-speed-toggle::before {
-	background: rgb(189,193,198);
 	border-radius: 0.65em;
-	height: 0.9em;
 	width: 2em;
+	height: 0.9em;
+	background: rgb(189, 193, 198);
 }
 
 .slow-speed-option .slow-speed-toggle::after {
-	background: #fff;
-	border-radius: 50%;
-	box-shadow: 0 1px 3px 0 rgb(0 0 0 / 40%);
-	height: 1.2em;
 	position: absolute;
 	top: 51%;
 	transform: translate(-20%, -50%);
+	box-shadow: 0 1px 3px 0 rgb(0, 0, 0, 0.4);
+	border-radius: 50%;
 	width: 1.1em;
+	height: 1.2em;
+	background: #fff;
 }
 
 .slow-speed-option [type=checkbox]:focus + .slow-speed-toggle {
@@ -195,18 +195,18 @@
 }
 
 .slow-speed-option [type=checkbox]:checked + .slow-speed-toggle::before {
-	background: var(--google-blue-600);
 	opacity: 0.5;
+	background: var(--google-blue-600);
 }
 
 .slow-speed-option [type=checkbox]:checked + .slow-speed-toggle::after {
-	background: var(--google-blue-600);
 	transform: translate(calc(2em - 90%), -50%);
+	background: var(--google-blue-600);
 }
 
 .slow-speed-option [type=checkbox]:checked:disabled +
 	.slow-speed-toggle::before {
-	background: rgb(189,193,198);
+	background: rgb(189, 193, 198);
 }
 
 .slow-speed-option [type=checkbox]:checked:disabled +
@@ -229,8 +229,8 @@
 }
 
 @media (min-width: 420px) and (max-width: 736px) and
-			 (min-height: 240px) and (max-height: 420px) and
-			 (orientation:landscape) {
+	(min-height: 240px) and (max-height: 420px) and
+	(orientation: landscape) {
 	.interstitial-wrapper {
 		margin-bottom: 100px;
 	}
@@ -303,7 +303,7 @@
 	.slow-speed-option .slow-speed-toggle::before,
 	.slow-speed-option [type=checkbox]:checked:disabled +
 		.slow-speed-toggle::before {
-		background: rgb(189,193,198);
+		background: rgb(189, 193, 198);
 	}
 
 	.slow-speed-option [type=checkbox]:checked + .slow-speed-toggle::after,
