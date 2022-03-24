@@ -34,7 +34,10 @@ div.right-align {
 }
 
 code {
-	margin: 0 3px;
+	border: 1px solid #ddd;
+	border-radius: 2px;
+	padding: 1px 4px;
+	background-color: ghostwhite;
 	font-size: 90%;
 	font-family: monospace;
 }
@@ -293,12 +296,6 @@ div.hide-content {
 	color: #555;
 }
 
-div.hide-content code {
-	font-size: 14px;
-	text-decoration: none;
-	color: #eaeaea;
-}
-
 a.hide-content:link,
 a.hide-content:visited {
 	border-radius: 3px;
@@ -500,10 +497,6 @@ ol.playlist li a:hover {
 		border-width: 1px;
 		border-radius: 8px;
 		padding: 9px;
-	}
-
-	div.hide-content code {
-		font-size: 10px;
 	}
 
 	a.hide-content:link,
