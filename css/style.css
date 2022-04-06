@@ -99,6 +99,28 @@ a.hash-link:hover {
 	text-decoration: none;
 }
 
+/* Blog */
+div.small-box {
+	display: inline-block;
+	margin-left: 0.6em;
+	border: 1px solid #ddd;
+	border-radius: 7px;
+	padding: 0 2.5px;
+	background-color: ghostwhite;
+	font-size: 80%;
+	color: gray;
+}
+
+div.posted-date {
+	margin-left: 0.5em;
+	font-size: 90%;
+	color: gray;
+}
+
+div.posted-date + hr {
+	margin-bottom: 15px;
+}
+
 /* Lists */
 ul.square {
 	list-style: square;
@@ -210,7 +232,7 @@ ul.topnav li {
 }
 
 ul.topnav li a {
-	display: inline-block;
+	display: block;
 	height: calc(100% - 20px);
 	padding: 10px;
 	font-size: 15px;
@@ -226,13 +248,10 @@ ul.topnav li a.inactive:hover {
 
 ul.topnav li.dropdown {
 	position: relative;
-	display: inline-block;
 }
 
 li.dropdown ul.dropdown {
 	position: absolute;
-	left: 0;
-	right: 0;
 	display: none;
 	overflow: hidden;
 	box-shadow: 0 8px 16px 0 var(--shadow-color);
@@ -241,9 +260,8 @@ li.dropdown ul.dropdown {
 	list-style-type: none;
 }
 
-li.dropdown ul.dropdown a {
-	width: 500px;
-	text-align: left;
+li.dropdown ul.dropdown li {
+	width: 100%;
 }
 
 /* Footer */

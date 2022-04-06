@@ -1,21 +1,33 @@
+let home = '';
+const href = window.location.href;
+if (href.includes('/blog/')) {
+	home = '../';
+}
+
 $('div.container').before(
 `<div class="header">
-	<h1><a href="index.html">My Personal Website</a></h1>
+	<h1><a href="${home}index.html">My Personal Website</a></h1>
 </div>
 <ul class="topnav">
-	<li><a class="inactive" href="index.html">Home</a></li>
+	<li><a class="inactive" href="${home}index.html">Home</a></li>
+	<li><a class="inactive" href="${home}blog.html">Blog</a></li>
 	<li class="dropdown">
 		<a class="dropdown" href="#">Math Olympiad</a>
 		<ul class="dropdown">
-			<li><a class="inactive" href="websites.html">Websites</a></li>
-			<li><a class="inactive" href="handouts.html">Handouts</a></li>
-			<li><a class="inactive" href="theorems.html">Theorems</a></li>
-			<li><a class="inactive" href="problems.html">Problems</a></li>
+			<li><a class="inactive" href="${home}websites.html">Websites</a></li>
+			<li><a class="inactive" href="${home}handouts.html">Handouts</a></li>
+			<li><a class="inactive" href="${home}theorems.html">Theorems</a></li>
+			<li><a class="inactive" href="${home}problems.html">Problems</a></li>
 		</ul>
 	</li>
-	<li><a class="inactive" href="python.html">Python</a></li>
-	<li><a class="inactive" href="paper_craft.html">Paper Craft</a></li>
-	<li><a class="inactive" href="music.html">Music</a></li>
+	<li class="dropdown">
+		<a class="dropdown" href="#">Hobbies</a>
+		<ul class="dropdown">
+			<li><a class="inactive" href="${home}music.html">Music</a></li>
+			<li><a class="inactive" href="${home}python.html">Python</a></li>
+			<li><a class="inactive" href="${home}paper_craft.html">Paper Craft</a></li>
+		</ul>
+	</li>
 </ul>`
 );
 $('div.container').after(
@@ -64,7 +76,6 @@ function InitPage() {
 	$('div.footer div.icon').each(function() {
 		$(this).css('bottom', 0.5 * (footerHeight - $(this).height()));
 	});
-	const href = window.location.href;
 	$('ul.topnav li a.inactive').each(function() {
 		let link = $(this);
 		const url = link.attr('href');
