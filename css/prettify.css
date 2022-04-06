@@ -1,0 +1,25 @@
+/* Add the following in head:
+ * <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+ * <link rel="stylesheet" href="css/prettyprint.css">
+ *
+ * https://www.npmjs.com/package/code-prettify-google
+ * https://jmblog.github.io/color-themes-for-google-code-prettify/themes/github-v2.css
+ * Color themes for Google Code Prettify | MIT License | github.com/jmblog/color-themes-for-google-code-prettify */
+.pln {color: #333;}
+
+@media screen {
+	.str {color: #183691;} /* string content */
+	.kwd {color: #a71d5d;} /* keyword */
+	.com {color: #969896;} /* comment */
+	.typ {color: #0086b3;} /* type name */
+	.lit {color: #0086b3;} /* literal value */
+	.pun {color: #333;}    /* punctuation */
+	.opn {color: #333;}    /* lisp open bracket */
+	.clo {color: #333;}    /* lisp close bracket */
+	.tag {color: #000080;} /* markup tag name */
+	.atn {color: #795da3;} /* markup attribute name */
+	.atv {color: #183691;} /* markup attribute value */
+	.dec {color: #333;}    /* declaration */
+	.var {color: #008080;} /* variable name */
+	.fun {color: #900;}    /* function name */
+}

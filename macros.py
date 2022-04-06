@@ -1,12 +1,14 @@
 import re
 
+
 def new_page(
 	filename,
 	title,
 	content=None,
 	home=None,
 	mathjax=False,
-	playlist=False
+	playlist=False,
+	prettify=False
 ):
 	if not content:
 		content = f"<h1>{title}</h1>\n\t\t<++>"
@@ -21,7 +23,19 @@ f"""<!DOCTYPE html>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 	<title>{title}</title>
-	<link rel="icon" href="{home}assets/favicon.png">
+	<link rel="icon" href="{home}assets/favicon.png">"""
+		)
+
+		if prettify:
+			file.write(
+f"""
+	<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/\
+run_prettify.js"></script>
+	<link rel="stylesheet" href="{home}css/prettify.css">"""
+			)
+
+		file.write(
+f"""
 	<link rel="stylesheet" href="{home}css/style.css">
 </head>
 <body>

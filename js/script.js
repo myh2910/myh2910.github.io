@@ -5,10 +5,7 @@ if (href.includes('/blog/')) {
 }
 
 $('div.container').before(
-`<div class="header">
-	<h1><a href="${home}index.html">My Personal Website</a></h1>
-</div>
-<ul class="topnav">
+`<ul class="topnav">
 	<li><a class="inactive" href="${home}index.html">Home</a></li>
 	<li><a class="inactive" href="${home}blog.html">Blog</a></li>
 	<li class="dropdown">
@@ -126,10 +123,16 @@ function HashLink() {
 }
 
 function DropdownClick() {
-	$('a.dropdown').click(function() {
-		$(this).next().slideToggle('fast');
-		return false;
-	});
+	if (document.body.clientWidth < 768) {
+		$('a.dropdown').click(function() {
+			$(this).next().slideToggle('fast');
+			return false;
+		});
+	} else {
+		$('a.dropdown').click(function() {
+			return false;
+		});
+	}
 }
 
 function HideContentClick() {
