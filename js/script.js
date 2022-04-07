@@ -9,8 +9,8 @@ $('div.container').before(
 	<li><a class="inactive" href="${home}index.html">Home</a></li>
 	<li><a class="inactive" href="${home}blog.html">Blog</a></li>
 	<li class="dropdown">
-		<a class="dropdown">Math Olympiad</a>
-		<ul class="dropdown">
+		<a class="dropdown">Math Olympiad <span class="caret"></span></a>
+		<ul class="dropdown-menu">
 			<li><a class="inactive" href="${home}websites.html">Websites</a></li>
 			<li><a class="inactive" href="${home}handouts.html">Handouts</a></li>
 			<li><a class="inactive" href="${home}theorems.html">Theorems</a></li>
@@ -18,8 +18,8 @@ $('div.container').before(
 		</ul>
 	</li>
 	<li class="dropdown">
-		<a class="dropdown">Hobbies</a>
-		<ul class="dropdown">
+		<a class="dropdown">Hobbies <span class="caret"></span></a>
+		<ul class="dropdown-menu">
 			<li><a class="inactive" href="${home}music.html">Music</a></li>
 			<li><a class="inactive" href="${home}python.html">Python</a></li>
 			<li><a class="inactive" href="${home}paper_craft.html">Paper Craft</a></li>
@@ -63,7 +63,8 @@ $('div.container').after(
 
 InitPage();
 HashLink();
-HideContentClick();
+CheckSpace();
+HideContent();
 IconHover();
 
 function InitPage() {
@@ -118,7 +119,21 @@ function HashLink() {
 	});
 }
 
-function HideContentClick() {
+function CheckSpace() {
+	const windowWidth = document.body.clientWidth;
+	$('ul.dropdown-menu').each(function() {
+		let menuBound = this.getBoundingClientRect();
+		if (menuBound.width + menuBound.x > windowWidth) {
+			$(this).css('right', '0');
+		}
+		$(this).hide();
+	});
+	$('li.dropdown').hover(function() {
+		$(this).find('ul.dropdown-menu').toggle();
+	});
+}
+
+function HideContent() {
 	$('a.hide-content').click(function() {
 		$(this).next().toggle('fast');
 		return false;

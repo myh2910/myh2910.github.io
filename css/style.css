@@ -1,8 +1,9 @@
 :root {
 	--footer-bgcolor: cornflowerblue;
 	--footer-color: #fff;
-	--dropdown-bgcolor: #f1f1f1;
-	--shadow-color: rgba(0, 0, 0, 0.2);
+	--box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+	--box-bgcolor: ghostwhite;
+	--box-border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 .MathJax {
@@ -30,9 +31,9 @@ div.right-align {
 
 code,
 pre {
-	border: 1px solid #ddd !important;
+	border: var(--box-border) !important;
 	border-radius: 2px;
-	background-color: ghostwhite;
+	background-color: var(--box-bgcolor);
 	font-size: 90%;
 	tab-size: 2;
 }
@@ -124,10 +125,10 @@ a.hash-link:hover {
 div.small-box {
 	display: inline-block;
 	margin-left: 0.6em;
-	border: 1px solid #ddd;
+	border: var(--box-border);
 	border-radius: 7px;
 	padding: 0 2.5px;
-	background-color: ghostwhite;
+	background-color: var(--box-bgcolor);
 	font-size: 80%;
 	color: gray;
 }
@@ -187,7 +188,7 @@ ol.custom > li:before {
 	top: -1px;
 	left: -36px;
 	box-shadow: 2px 2px #999;
-	border: solid 2px #44f;
+	border: 2px solid #44f;
 	padding: 0 5px;
 	line-height: 20px;
 	font-family: "Trebuchet MS", sans-serif;
@@ -221,7 +222,7 @@ ol.par-alpha > li:before {
 	left: -26px;
 }
 
-/* Sticky navigation bar */
+/* Navigation bar */
 ul.topnav {
 	position: sticky;
 	z-index: 4;
@@ -234,13 +235,8 @@ ul.topnav {
 	list-style-type: none;
 }
 
-ul.topnav > li {
-	float: left;
-}
-
 ul.topnav > li a {
 	display: block;
-	height: calc(100% - 20px);
 	padding: 10px 12px;
 	cursor: pointer;
 	font-size: 15px;
@@ -249,11 +245,11 @@ ul.topnav > li a {
 	color: #fff;
 }
 
-ul.topnav > li a.active {
+ul.topnav a.active {
 	background-color: royalblue;
 }
 
-ul.topnav > li a.inactive:hover,
+ul.topnav > li > a.inactive:hover,
 a.dropdown:hover {
 	background-color: #5484dd;
 }
@@ -262,30 +258,44 @@ li.dropdown {
 	position: relative;
 }
 
-li.dropdown ul.dropdown {
+span.caret {
+	display: inline-block;
+	margin-left: 1px;
+	border-top: 4px solid;
+	border-right: 4px solid transparent;
+	border-left: 4px solid transparent;
+	width: 0;
+	height: 0;
+	vertical-align: middle;
+}
+
+ul.dropdown-menu {
 	position: absolute;
-	display: none;
-	overflow: auto;
-	box-shadow: 0 8px 16px 0 var(--shadow-color);
-	width: 105px;
+	overflow: hidden;
+	margin-top: -2px;
+	box-shadow: var(--box-shadow);
+	border: var(--box-border);
+	border-radius: 4px;
 	padding: 0;
-	background-color: var(--dropdown-bgcolor);
+	background-color: #fff;
 	list-style-type: none;
 }
 
-li.dropdown:hover ul.dropdown {
-	display: block;
-}
-
-li.dropdown ul.dropdown li {
+ul.dropdown-menu > li {
 	width: 100%;
 }
 
-ul.dropdown li a.inactive {
-	color: #666;
+ul.dropdown-menu > li > a {
+	padding: 9px 12px;
+	font-size: 14px;
+	white-space: nowrap;
 }
 
-ul.dropdown li a.inactive:hover {
+ul.dropdown-menu > li > a.inactive {
+	color: #555;
+}
+
+ul.dropdown-menu > li > a.inactive:hover {
 	background-color: #ddd;
 }
 
@@ -335,11 +345,11 @@ div.hide-content {
 	position: sticky;
 	display: none;
 	margin: 10px 0;
-	box-shadow: 0 8px 16px 0 var(--shadow-color);
-	border: 1.5px solid #ccc;
+	box-shadow: var(--box-shadow);
+	border: var(--box-border);
 	border-radius: 10px;
 	padding: 12px;
-	background-color: var(--dropdown-bgcolor);
+	background-color: var(--box-bgcolor);
 	text-align: left;
 	color: #555;
 }
@@ -498,15 +508,11 @@ ol.playlist li a:hover {
 		left: -15px;
 	}
 
-	/* Sticky navigation bar */
+	/* Navigation bar */
 	ul.topnav > li a {
 		height: calc(100% - 18px);
 		padding: 9px 10px;
 		font-size: 14px;
-	}
-
-	li.dropdown ul.dropdown {
-		width: 93px;
 	}
 
 	/* Footer */
