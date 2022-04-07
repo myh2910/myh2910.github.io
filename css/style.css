@@ -32,7 +32,6 @@ code,
 pre {
 	border: 1px solid #ddd !important;
 	border-radius: 2px;
-	padding: 2px 3px !important;
 	background-color: ghostwhite;
 	font-size: 90%;
 	tab-size: 2;
@@ -40,6 +39,11 @@ pre {
 
 code {
 	padding: 1px 4px;
+}
+
+pre {
+	overflow: auto;
+	padding: 2px 3px !important;
 }
 
 img {
@@ -63,12 +67,12 @@ hr {
 a:link,
 a:visited {
 	text-decoration: none;
-	color: steelblue;
+	color: dodgerblue;
 }
 
 a:hover {
 	text-decoration: underline;
-	color: cadetblue;
+	color: deepskyblue;
 }
 
 a:active {
@@ -91,18 +95,29 @@ h2 a:visited {
 h3,
 h3 a:link,
 h3 a:visited {
+	font-size: 1.2em;
 	color: firebrick;
+}
+
+h1 a:link:hover,
+h1 a:visited:hover,
+h2 a:link:hover,
+h2 a:visited:hover,
+h3 a:link:hover,
+h3 a:visited:hover {
+	text-shadow: 0 0 1.5px #ff0;
 }
 
 a.hash-link {
 	opacity: 0.2;
-	margin-left: 7px;
-	text-shadow: 0 0 5px #ff0;
+	margin-left: 8px;
 }
 
 a.hash-link:hover {
-	opacity: 1;
+	opacity: 0.9;
 	text-decoration: none;
+	text-shadow: 0 0 4px #ff0 !important;
+	filter: brightness(1.1);
 }
 
 /* Blog */
@@ -121,6 +136,10 @@ div.posted-date {
 	margin-left: 0.5em;
 	font-size: 90%;
 	color: gray;
+}
+
+div.posted-date:before {
+	content: "🕒 Posted on ";
 }
 
 div.posted-date + hr {
@@ -168,7 +187,7 @@ ol.custom > li:before {
 	top: -1px;
 	left: -36px;
 	box-shadow: 2px 2px #999;
-	border: solid 2px #00f;
+	border: solid 2px #44f;
 	padding: 0 5px;
 	line-height: 20px;
 	font-family: "Trebuchet MS", sans-serif;
@@ -223,6 +242,7 @@ ul.topnav > li a {
 	display: block;
 	height: calc(100% - 20px);
 	padding: 10px 12px;
+	cursor: pointer;
 	font-size: 15px;
 	font-family: "Trebuchet MS", sans-serif;
 	text-decoration: none;
@@ -234,8 +254,8 @@ ul.topnav > li a.active {
 }
 
 ul.topnav > li a.inactive:hover,
-ul.topnav a.dropdown:hover {
-	background-color: #5887e0;
+a.dropdown:hover {
+	background-color: #5484dd;
 }
 
 li.dropdown {
@@ -276,10 +296,15 @@ div.footer {
 	bottom: 0;
 	left: 0;
 	right: 0;
+	align-items: center;
+	display: flex;
 	padding: 12px;
 	background-color: var(--footer-bgcolor);
+}
+
+div.footer span {
+	margin: auto;
 	font-family: "Trebuchet MS", sans-serif;
-	text-align: center;
 	text-decoration: none;
 	color: var(--footer-color);
 }
@@ -319,19 +344,17 @@ div.hide-content {
 	color: #555;
 }
 
-a.hide-content:link,
-a.hide-content:visited {
+a.hide-content {
 	border-radius: 3px;
-	padding: 0 4px;
-	background-color: #f9e1cc;
+	padding: 0 4px;;
+	background-color: coral;
+	cursor: pointer;
 	text-decoration: none;
-	color: #e06800;
+	color: #fff;
 }
 
 a.hide-content:hover {
-	background-color: #e06800;
-	text-decoration: none;
-	color: #fff;
+	background-color: tomato;
 }
 
 /* Iframe */
@@ -362,7 +385,7 @@ audio.playlist {
 	width: calc(900px - 6px);
 	height: 30px;
 	padding: 3px;
-	background-color: mediumturquoise;
+	background-color: lightseagreen;
 }
 
 div.playlist {
@@ -372,7 +395,7 @@ div.playlist {
 	width: 900px;
 	max-height: 170px;
 	padding: 5px;
-	background-color: mediumturquoise;
+	background-color: lightseagreen;
 }
 
 ol.playlist {
@@ -401,7 +424,7 @@ ol.playlist li:before {
 
 ol.playlist li.active-audio:before,
 ol.playlist li.active-audio a {
-	color: #003c3c;
+	color: #111;
 }
 
 ol.playlist li.active-audio a {

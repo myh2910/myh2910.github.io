@@ -70,7 +70,7 @@ f"""
 def new_post(date, title, id, content=None, **kwargs):
 	if not content:
 		content = f"""<h1 id="{id}">{title}</h1>
-		<div class="posted-date">Posted on {date}</div>
+		<div class="posted-date">{date}</div>
 		<hr>
 		<++>"""
 

@@ -9,7 +9,7 @@ $('div.container').before(
 	<li><a class="inactive" href="${home}index.html">Home</a></li>
 	<li><a class="inactive" href="${home}blog.html">Blog</a></li>
 	<li class="dropdown">
-		<a class="dropdown" href="#">Math Olympiad</a>
+		<a class="dropdown">Math Olympiad</a>
 		<ul class="dropdown">
 			<li><a class="inactive" href="${home}websites.html">Websites</a></li>
 			<li><a class="inactive" href="${home}handouts.html">Handouts</a></li>
@@ -18,7 +18,7 @@ $('div.container').before(
 		</ul>
 	</li>
 	<li class="dropdown">
-		<a class="dropdown" href="#">Hobbies</a>
+		<a class="dropdown">Hobbies</a>
 		<ul class="dropdown">
 			<li><a class="inactive" href="${home}music.html">Music</a></li>
 			<li><a class="inactive" href="${home}python.html">Python</a></li>
@@ -63,16 +63,12 @@ $('div.container').after(
 
 InitPage();
 HashLink();
-DropdownClick();
 HideContentClick();
 IconHover();
 
 function InitPage() {
 	const footerHeight = $('div.footer').outerHeight();
 	$('div.container').css('margin-bottom', `calc(${footerHeight}px + ${$('div.container').css('marginLeft')})`);
-	$('div.footer div.icon').each(function() {
-		$(this).css('bottom', 0.5 * (footerHeight - $(this).height()));
-	});
 	$('ul.topnav li a.inactive').each(function() {
 		let link = $(this);
 		const url = link.attr('href');
@@ -120,19 +116,6 @@ function HashLink() {
 			scrollTop: $(this).parent().offset().top - $(this).height()
 		}, 'fast');
 	});
-}
-
-function DropdownClick() {
-	if (document.body.clientWidth < 768) {
-		$('a.dropdown').click(function() {
-			$(this).next().slideToggle('fast');
-			return false;
-		});
-	} else {
-		$('a.dropdown').click(function() {
-			return false;
-		});
-	}
 }
 
 function HideContentClick() {
