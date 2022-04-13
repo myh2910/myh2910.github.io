@@ -237,9 +237,9 @@ ul.topnav {
 
 ul.topnav li > a {
 	display: block;
-	padding: 10px 12px;
+	padding: 11px;
 	cursor: pointer;
-	font-size: 15px;
+	font-size: 16px;
 	font-family: "Trebuchet MS", sans-serif;
 	text-decoration: none;
 	color: #fff;
@@ -285,8 +285,9 @@ ul.dropdown-menu > li {
 }
 
 ul.dropdown-menu > li > a {
-	padding: 9px 12px;
+	padding: 8px 11px;
 	font-size: 14px;
+	font-family: "Noto Sans", sans-serif;
 	white-space: nowrap;
 }
 
@@ -355,7 +356,7 @@ div.hide-content {
 
 a.hide-content {
 	border-radius: 3px;
-	padding: 0 4px;;
+	padding: 0 4px;
 	background-color: coral;
 	cursor: pointer;
 	text-decoration: none;
@@ -509,8 +510,13 @@ ol.playlist > li > a:hover {
 
 	/* Navigation bar */
 	ul.topnav li > a {
-		height: calc(100% - 18px);
-		padding: 9px 10px;
+		height: calc(100% - 19px);
+		padding: 9.5px;
+		font-size: 15px;
+	}
+
+	ul.dropdown-menu > li > a {
+		padding: 8px;
 		font-size: 14px;
 	}
 
