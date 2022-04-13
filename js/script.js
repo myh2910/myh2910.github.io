@@ -1,28 +1,22 @@
-let home = '';
-const href = window.location.href;
-if (href.includes('/blog/')) {
-	home = '../';
-}
-
 $('div.container').before(
 `<ul class="topnav">
-	<li><a class="inactive" href="${home}index.html">Home</a></li>
-	<li><a class="inactive" href="${home}blog.html">Blog</a></li>
+	<li><a href="/index.html">Home</a></li>
+	<li><a href="/blog.html">Blog</a></li>
 	<li class="dropdown">
 		<a class="dropdown">Math Olympiad <span class="caret"></span></a>
 		<ul class="dropdown-menu">
-			<li><a class="inactive" href="${home}websites.html">Websites</a></li>
-			<li><a class="inactive" href="${home}handouts.html">Handouts</a></li>
-			<li><a class="inactive" href="${home}theorems.html">Theorems</a></li>
-			<li><a class="inactive" href="${home}problems.html">Problems</a></li>
+			<li><a href="/websites.html">Websites</a></li>
+			<li><a href="/handouts.html">Handouts</a></li>
+			<li><a href="/theorems.html">Theorems</a></li>
+			<li><a href="/problems.html">Problems</a></li>
 		</ul>
 	</li>
 	<li class="dropdown">
 		<a class="dropdown">Hobbies <span class="caret"></span></a>
 		<ul class="dropdown-menu">
-			<li><a class="inactive" href="${home}music.html">Music</a></li>
-			<li><a class="inactive" href="${home}python.html">Python</a></li>
-			<li><a class="inactive" href="${home}paper_craft.html">Paper Craft</a></li>
+			<li><a href="/music.html">Music</a></li>
+			<li><a href="/python.html">Python</a></li>
+			<li><a href="/paper_craft.html">Paper Craft</a></li>
 		</ul>
 	</li>
 </ul>`
@@ -70,29 +64,10 @@ IconHover();
 function InitPage() {
 	const footerHeight = $('div.footer').outerHeight();
 	$('div.container').css('margin-bottom', `calc(${footerHeight}px + ${$('div.container').css('marginLeft')})`);
-	$('ul.topnav li a.inactive').each(function() {
-		let link = $(this);
-		const url = link.attr('href');
-		if (href.indexOf(url) >= 0) {
-			link.attr('class', 'active');
-			return false;
-		} else if (href.slice(-5) !== '.html') {
-			let new_link;
-			if (href === 'https://myh2910.github.io/') {
-				new_link = 'index.html';
-			} else if (href.slice(-2) === '/#') {
-				new_link = `${href.slice(0, -1)}index.html`;
-			} else if (href.slice(-1) === '#') {
-				new_link = `${href.slice(0, -1)}.html`;
-			} else {
-				new_link = `${href}.html`;
-			}
-			if (new_link.indexOf(url) >= 0) {
-				link.attr('class', 'active');
-				return false;
-			}
-		}
-	});
+	const href = $('head').attr('data-href');
+	if (href) {
+		$(`ul.topnav li > a[href='${href}']`).attr('class', 'active');
+	}
 }
 
 function HashLink() {

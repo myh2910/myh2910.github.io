@@ -82,30 +82,30 @@ a:active {
 
 /* Headings */
 h1,
-h1 a:link,
-h1 a:visited {
+h1 > a:link,
+h1 > a:visited {
 	color: royalblue;
 }
 
 h2,
-h2 a:link,
-h2 a:visited {
+h2 > a:link,
+h2 > a:visited {
 	color: darkcyan;
 }
 
 h3,
-h3 a:link,
-h3 a:visited {
+h3 > a:link,
+h3 > a:visited {
 	font-size: 1.2em;
 	color: firebrick;
 }
 
-h1 a:link:hover,
-h1 a:visited:hover,
-h2 a:link:hover,
-h2 a:visited:hover,
-h3 a:link:hover,
-h3 a:visited:hover {
+h1 > a:link:hover,
+h1 > a:visited:hover,
+h2 > a:link:hover,
+h2 > a:visited:hover,
+h3 > a:link:hover,
+h3 > a:visited:hover {
 	text-shadow: 0 0 1.5px #ff0;
 }
 
@@ -235,7 +235,7 @@ ul.topnav {
 	list-style-type: none;
 }
 
-ul.topnav > li a {
+ul.topnav li > a {
 	display: block;
 	padding: 10px 12px;
 	cursor: pointer;
@@ -249,8 +249,7 @@ ul.topnav a.active {
 	background-color: royalblue;
 }
 
-ul.topnav > li > a.inactive:hover,
-a.dropdown:hover {
+ul.topnav > li > a:not(.active):hover {
 	background-color: #5484dd;
 }
 
@@ -291,11 +290,11 @@ ul.dropdown-menu > li > a {
 	white-space: nowrap;
 }
 
-ul.dropdown-menu > li > a.inactive {
-	color: #555;
+ul.dropdown-menu > li > a:not(.active) {
+	color: #555
 }
 
-ul.dropdown-menu > li > a.inactive:hover {
+ul.dropdown-menu > li > a:not(.active):hover {
 	background-color: #ddd;
 }
 
@@ -312,7 +311,7 @@ div.footer {
 	background-color: var(--footer-bgcolor);
 }
 
-div.footer span {
+div.footer > span {
 	margin: auto;
 	font-family: "Trebuchet MS", sans-serif;
 	text-decoration: none;
@@ -320,7 +319,7 @@ div.footer span {
 }
 
 /* Icon */
-div.footer div.icon {
+div.footer > div.icon {
 	position: absolute;
 	width: 25px;
 	height: 25px;
@@ -328,7 +327,7 @@ div.footer div.icon {
 	padding: 0;
 }
 
-div.footer div.icon:hover {
+div.footer > div.icon:hover {
 	transform: scale(1.2);
 }
 
@@ -416,14 +415,14 @@ ol.playlist {
 	list-style: none;
 }
 
-ol.playlist li {
+ol.playlist > li {
 	counter-increment: playlist-counter;
 	position: relative;
 	left: 32px;
 	width: calc(100% - 32px);
 }
 
-ol.playlist li:before {
+ol.playlist > li:before {
 	content: counter(playlist-counter) ".";
 	position: absolute;
 	top: 5px;
@@ -432,23 +431,23 @@ ol.playlist li:before {
 	color: #fff;
 }
 
-ol.playlist li.active-audio:before,
-ol.playlist li.active-audio a {
+ol.playlist > li.active-audio:before,
+ol.playlist > li.active-audio > a {
 	color: #111;
 }
 
-ol.playlist li.active-audio a {
+ol.playlist > li.active-audio > a {
 	text-decoration: none;
 	text-shadow: 0 0 1px;
 }
 
-ol.playlist li a {
+ol.playlist > li > a {
 	display: block;
 	padding: 5px;
 	color: #fff;
 }
 
-ol.playlist li a:hover {
+ol.playlist > li > a:hover {
 	text-decoration: none;
 	text-shadow: 0 0 3px;
 }
@@ -509,7 +508,7 @@ ol.playlist li a:hover {
 	}
 
 	/* Navigation bar */
-	ul.topnav > li a {
+	ul.topnav li > a {
 		height: calc(100% - 18px);
 		padding: 9px 10px;
 		font-size: 14px;
@@ -575,21 +574,21 @@ ol.playlist li a:hover {
 		padding: 2px;
 	}
 
-	ol.playlist li {
+	ol.playlist > li {
 		left: 20px;
 		width: calc(100% - 20px);
 	}
 
-	ol.playlist li:before {
+	ol.playlist > li:before {
 		top: 2px;
 		right: calc(100% + 3px);
 	}
 
-	ol.playlist li a {
+	ol.playlist > li > a {
 		padding: 2px;
 	}
 
-	ol.playlist li a:hover {
+	ol.playlist > li > a:hover {
 		text-shadow: 0 0 1px;
 	}
 }
