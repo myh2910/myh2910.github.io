@@ -30,7 +30,6 @@ window.MathJax = {
 			symsum: '\\sum_{\\mathrm{sym}}',
 			cycprod: '\\prod_{\\mathrm{cyc}}',
 			symprod: '\\prod_{\\mathrm{sym}}',
-			pths: ['\\left(#1\\right)', 1],
 			abs: ['\\left\\lvert#1\\right\\rvert', 1],
 			norm: ['\\left\\lVert#1\\right\\rVert', 1],
 			dang: '\\measuredangle',
