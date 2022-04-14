@@ -225,25 +225,39 @@ window.loadTimeData = loadTimeData;
 
 // Dino game
 const pageData = {
-	'dinoGameA11yAriaLabel': 'Dino game, play',
-	'dinoGameA11yDescription': 'Dino game. A pixelated dinosaur dodges cacti and pterodactyls as it runs across a desolate landscape. When you hear an audio cue, press space to jump over obstacles.',
-	'dinoGameA11yGameOver': 'Game over, your score is $1.',
-	'dinoGameA11yHighScore': 'Your highest score is $1.',
-	'dinoGameA11yJump': 'Jump!',
-	'dinoGameA11ySpeedToggle': 'Start slower',
-	'dinoGameA11yStartGame': 'Game started.',
-	'errorCode': '',
-	'fontfamily': '"sans", Arial, sans-serif',
-	'fontsize': '75%',
-	'heading': {
-		'hostName': 'dino',
-		'msg': 'Press space to play'
+	dinoGameA11yAriaLabel: 'Dino game, play',
+	dinoGameA11yDescription: 'Dino game. A pixelated dinosaur dodges cacti and pterodactyls as it runs across a desolate landscape. When you hear an audio cue, press space to jump over obstacles.',
+	dinoGameA11yGameOver: 'Game over, your score is $1.',
+	dinoGameA11yHighScore: 'Your highest score is $1.',
+	dinoGameA11yJump: 'Jump!',
+	dinoGameA11ySpeedToggle: 'Start slower',
+	dinoGameA11yStartGame: 'Game started.',
+	errorCode: '',
+	fontfamily: '"sans", Arial, sans-serif',
+	fontsize: '75%',
+	heading: {
+		hostName: 'dino',
+		msg: 'Press space to play'
 	},
-	'iconClass': 'icon-offline',
-	'language': 'en',
-	'textdirection': 'ltr',
-	'title': 'chrome://dino/'
+	iconClass: 'icon-offline',
+	language: 'en',
+	textdirection: 'ltr',
+	title: 'chrome://dino/'
 };
+if (document.documentElement.clientWidth < 768) {
+	pageData.heading.msg = 'Tap the dino to play';
+}
+document.querySelector('#main-message h1 span').innerText = pageData.heading.msg;
+
 loadTimeData.data = pageData;
 const HIDDEN_CLASS = 'hidden';
 new Runner('.interstitial-wrapper');
+
+if (document.documentElement.clientWidth < 1200) {
+	const dinoContainer = document.querySelector('.runner-container');
+	const domRect = dinoContainer.getBoundingClientRect();
+	const spaceBelow = window.innerHeight - domRect.bottom;
+	if (spaceBelow > 0) {
+		dinoContainer.style.height = `${domRect.height + spaceBelow}px`;
+	}
+}

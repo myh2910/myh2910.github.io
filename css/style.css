@@ -1,6 +1,8 @@
 :root {
-	--footer-bgcolor: cornflowerblue;
-	--footer-color: #fff;
+	--bgcolor-1: #496e6e;
+	--bgcolor-2: #386161;
+	--bgcolor-3: #2f4f4f;
+	--heading-color: darkcyan;
 	--box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 	--box-bgcolor: ghostwhite;
 	--box-border: 1px solid rgba(0, 0, 0, 0.15);
@@ -88,21 +90,20 @@ a:active {
 /* Headings */
 h1,
 h1 > a:link,
-h1 > a:visited {
-	color: royalblue;
-}
-
+h1 > a:visited,
 h2,
 h2 > a:link,
-h2 > a:visited {
-	color: darkcyan;
+h2 > a:visited,
+h3,
+h3 > a:link,
+h3 > a:visited {
+	color: var(--heading-color);
 }
 
 h3,
 h3 > a:link,
 h3 > a:visited {
 	font-size: 1.2em;
-	color: firebrick;
 }
 
 h1 > a:hover,
@@ -193,7 +194,7 @@ ol.custom > li:before {
 	position: absolute;
 	top: -1px;
 	left: -36px;
-	box-shadow: 2px 2px #999;
+	box-shadow: var(--box-shadow);
 	border: 2px solid #44f;
 	padding: 0 5px;
 	line-height: 20px;
@@ -236,7 +237,7 @@ ul.topnav {
 	display: flex;
 	margin: 0;
 	padding: 0;
-	background-color: cornflowerblue;
+	background-color: var(--bgcolor-1);
 	font-family: "Roboto", sans-serif;
 	list-style-type: none;
 }
@@ -252,11 +253,11 @@ ul.topnav li > a {
 }
 
 ul.topnav a.active {
-	background-color: royalblue;
+	background-color: var(--bgcolor-3);
 }
 
 ul.topnav > li > a:not(.active):hover {
-	background-color: #5484dd;
+	background-color: var(--bgcolor-2);
 }
 
 li.dropdown {
@@ -315,14 +316,14 @@ div.footer {
 	align-items: center;
 	display: flex;
 	padding: 12px;
-	background-color: var(--footer-bgcolor);
+	background-color: var(--bgcolor-1);
 }
 
 div.footer > span {
 	margin: auto;
 	font-family: "Trebuchet MS", sans-serif;
 	text-decoration: none;
-	color: var(--footer-color);
+	color: #fff;
 }
 
 /* Icon */
@@ -462,7 +463,10 @@ ol.playlist > li > a:hover {
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--box-bgcolor: #333;
+		--heading-color:greenyellow;
+		--box-shadow: 0 8px 16px 0 rgba(100, 100, 100, 0.25);
+		--box-bgcolor: #333327;
+		--box-border: 1px solid rgba(0, 0, 0, 0.45);
 	}
 
 	body {
@@ -477,13 +481,25 @@ ol.playlist > li > a:hover {
 	}
 
 	ol.custom > li:before {
-		box-shadow: 2px 2px #333;
-		border: 2px solid #44f;
+		border-color: #55f;
 		color: #aaf;
+	}
+
+	a.hide-content {
+		background-color: #b3422e;
+	}
+	
+	a.hide-content:hover {
+		background-color: #e9573d;
 	}
 
 	div.hide-content {
 		color: #999;
+	}
+
+	audio.playlist,
+	div.playlist {
+		background-color: #559;
 	}
 }
 
@@ -526,7 +542,6 @@ ol.playlist > li > a:hover {
 	ol.custom > li:before {
 		top: 2px;
 		left: -22px;
-		box-shadow: 1px 1px #999;
 		border-width: 1px;
 		padding: 1px 2.6px 1px 2.6px;
 		line-height: 12px;
