@@ -58,6 +58,10 @@ img.latexcenter {
 	padding: 1em 0;
 }
 
+del {
+	opacity: 0.5;
+}
+
 hr {
 	border: 0;
 	border-top: 1px solid #bbb;
