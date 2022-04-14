@@ -48,14 +48,15 @@ pre {
 }
 
 img {
-	max-width: 100%;
+	max-width: calc(100% - 32px);
+	background-color: #fff;
 }
 
 img.latexcenter {
 	display: block;
-	margin: 5px auto;
+	margin: 15px auto;
 	box-sizing: content-box;
-	padding: 1em 0;
+	padding: 3px;
 }
 
 del {
@@ -104,13 +105,13 @@ h3 > a:visited {
 	color: firebrick;
 }
 
-h1 > a:link:hover,
-h1 > a:visited:hover,
-h2 > a:link:hover,
-h2 > a:visited:hover,
-h3 > a:link:hover,
-h3 > a:visited:hover {
-	text-shadow: 0 0 1.5px #ff0;
+h1 > a:hover,
+h2 > a:hover {
+	text-decoration-thickness: 3px;
+}
+
+h3 > a:hover {
+	text-decoration-thickness: 2px;
 }
 
 a.hash-link {
@@ -120,9 +121,6 @@ a.hash-link {
 
 a.hash-link:hover {
 	opacity: 0.9;
-	text-decoration: none;
-	text-shadow: 0 0 4px #ff0 !important;
-	filter: brightness(1.1);
 }
 
 /* Blog */
@@ -152,6 +150,10 @@ div.posted-date + hr {
 }
 
 /* Lists */
+div.container li {
+	margin: 4px 0;
+}
+
 ul.square {
 	list-style: square;
 }
@@ -424,6 +426,7 @@ ol.playlist > li {
 	counter-increment: playlist-counter;
 	position: relative;
 	left: 32px;
+	margin: 0;
 	width: calc(100% - 32px);
 }
 
@@ -457,6 +460,33 @@ ol.playlist > li > a:hover {
 	text-shadow: 0 0 3px;
 }
 
+@media (prefers-color-scheme: dark) {
+	:root {
+		--box-bgcolor: #333;
+	}
+
+	body {
+		background-color: #202124;
+		color: #eee;
+	}
+
+	h1,
+	h2,
+	h3 {
+		filter: brightness(1.1);
+	}
+
+	ol.custom > li:before {
+		box-shadow: 2px 2px #333;
+		border: 2px solid #44f;
+		color: #aaf;
+	}
+
+	div.hide-content {
+		color: #999;
+	}
+}
+
 @media (min-width: 768px) and (max-width: 991px) {
 	audio.playlist {
 		margin: 30px 0 6px;
@@ -471,6 +501,10 @@ ol.playlist > li > a:hover {
 @media (max-width: 767px) {
 	div.container {
 		margin: 0 8px;
+	}
+
+	img {
+		max-width: calc(100% - 16px);
 	}
 
 	/* Lists */

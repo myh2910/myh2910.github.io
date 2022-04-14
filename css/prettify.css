@@ -3,8 +3,9 @@
  * <link rel="stylesheet" href="/css/prettyprint.css">
  *
  * https://www.npmjs.com/package/code-prettify-google
- * https://jmblog.github.io/color-themes-for-google-code-prettify/themes/github-v2.css
- * Color themes for Google Code Prettify | MIT License | github.com/jmblog/color-themes-for-google-code-prettify */
+ * https://jmblog.github.io/color-themes-for-google-code-prettify */
+
+/* GitHub v2 */
 .pln {color: #333;}
 
 @media screen {
@@ -22,4 +23,26 @@
 	.dec {color: #333;}    /* declaration */
 	.var {color: #008080;} /* variable name */
 	.fun {color: #900;}    /* function name */
+}
+
+@media (prefers-color-scheme: dark) {
+	/* Tomorrow Night */
+	.pln {color: #c5c8c6;}
+
+	@media screen {
+		.str {color: #b5bd68;} /* string content */
+		.kwd {color: #b294bb;} /* keyword */
+		.com {color: #969896;} /* comment */
+		.typ {color: #81a2be;} /* type name */
+		.lit {color: #de935f;} /* literal value */
+		.pun {color: #c5c8c6;}    /* punctuation */
+		.opn {color: #c5c8c6;}    /* lisp open bracket */
+		.clo {color: #c5c8c6;}    /* lisp close bracket */
+		.tag {color: #cc6666;} /* markup tag name */
+		.atn {color: #de935f;} /* markup attribute name */
+		.atv {color: #8abeb7;} /* markup attribute value */
+		.dec {color: #de935f;}    /* declaration */
+		.var {color: #cc6666;} /* variable name */
+		.fun {color: #81a2be;}    /* function name */
+	}
 }
