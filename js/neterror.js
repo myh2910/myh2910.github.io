@@ -253,11 +253,9 @@ loadTimeData.data = pageData;
 const HIDDEN_CLASS = 'hidden';
 new Runner('.interstitial-wrapper');
 
-if (document.documentElement.clientWidth < 1200) {
-	const dinoContainer = document.querySelector('.runner-container');
-	const domRect = dinoContainer.getBoundingClientRect();
-	const spaceBelow = window.innerHeight - domRect.bottom;
-	if (spaceBelow > 0) {
-		dinoContainer.style.height = `${domRect.height + spaceBelow}px`;
-	}
+const dinoContainer = document.querySelector('.runner-container');
+const domRect = dinoContainer.getBoundingClientRect();
+const spaceBelow = window.innerHeight - domRect.bottom;
+if (spaceBelow > 0) {
+	dinoContainer.style.height = `${domRect.height + spaceBelow}px`;
 }
