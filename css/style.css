@@ -403,7 +403,7 @@ audio.playlist {
 	width: calc(900px - 6px);
 	height: 30px;
 	padding: 3px;
-	background-color: lightseagreen;
+	background-color: #4fafa9;
 }
 
 div.playlist {
@@ -413,7 +413,7 @@ div.playlist {
 	width: 900px;
 	max-height: 170px;
 	padding: 5px;
-	background-color: lightseagreen;
+	background-color: #4fafa9;
 }
 
 ol.playlist {
