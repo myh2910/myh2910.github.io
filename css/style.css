@@ -230,6 +230,20 @@ ol.par-alpha > li:before {
 	left: -26px;
 }
 
+.checkbox::marker {
+	content: "";
+}
+
+.checkbox > input {
+	position: relative;
+	left: -26px;
+}
+
+.checkbox > input + span {
+	position: relative;
+	left: -20px;
+}
+
 /* Navigation bar */
 ul.topnav {
 	position: sticky;
@@ -373,6 +387,7 @@ a.hide-content {
 
 a.hide-content:hover {
 	background-color: tomato;
+	color: #fff;
 }
 
 /* Iframe */
@@ -475,21 +490,34 @@ ol.playlist > li > a:hover {
 		color: #eee;
 	}
 
+	/* Links */
+	a:link,
+	a:visited {
+		color: #50b0e7;
+	}
+
+	a:hover {
+		color: deepskyblue;
+	}
+
+	/* Headings */
 	h1,
 	h2,
 	h3 {
 		filter: brightness(1.1);
 	}
 
+	/* Lists */
 	ol.custom > li:before {
 		border-color: #5570ff;
 		color: #ddf;
 	}
 
+	/* Dropdown */
 	a.hide-content {
 		background-color: #853b2d;
 	}
-	
+
 	a.hide-content:hover {
 		background-color: #7a2616;
 	}
@@ -498,6 +526,7 @@ ol.playlist > li > a:hover {
 		color: #bbb;
 	}
 
+	/* Playlist */
 	audio.playlist,
 	div.playlist {
 		background-color: #55998e;
@@ -505,6 +534,12 @@ ol.playlist > li > a:hover {
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
+	/* Lists */
+	.checkbox > input {
+		left: -24px;
+	}
+
+	/* Playlist */
 	audio.playlist {
 		margin: 30px 0 6px;
 		width: calc(100% - 6px);
@@ -560,6 +595,10 @@ ol.playlist > li > a:hover {
 
 	ol.par-alpha > li:before {
 		left: -15px;
+	}
+
+	.checkbox > input {
+		left: -23px;
 	}
 
 	/* Navigation bar */
