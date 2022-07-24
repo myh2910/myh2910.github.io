@@ -8,3 +8,7 @@ This is the first website created by me.
 - The source code of the [Dinosaur Game](https://en.wikipedia.org/wiki/Dinosaur_Game) is from [here](https://github.com/chromium/chromium/tree/main/components/neterror).
 - If you are using Firefox Android, go to `Settings -> Customize -> Gestures`
 	and unselect `Scroll to hide toolbar` mode.
+
+## To-do
+
+- [ ] Improve dark and light mode color schemes.
