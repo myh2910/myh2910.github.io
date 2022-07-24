@@ -69,7 +69,8 @@ f"""
 f"""
 	<script src="/js/script.js"></script>
 </body>
-</html>"""
+</html>
+"""
 		)
 
 def new_post(date, title, id, content=None, **kwargs):
@@ -79,21 +80,21 @@ def new_post(date, title, id, content=None, **kwargs):
 		<hr>
 		<++>"""
 
-	with open("posts.log", "a", encoding="utf8") as file:
+	with open("blog.log", "a", encoding="utf8") as file:
 		file.write(f"{date} {id}")
 
 	new_page(f"blog/{date}-{id}.html", title, content, **kwargs)
 
 def update_blog(filename="blog.html", title="Blog", **kwargs):
 	content = f'<h1 id="blog">My Personal Blog</h1>\n\t\t<ul>'
-	with open("posts.log", "r", encoding="utf8") as file:
+	with open("blog.log", "r", encoding="utf8") as file:
 		posts = [line.split() for line in file.readlines()[::-1]]
 
 	for date, id in posts:
 		post = f"blog/{date}-{id}.html"
 		with open(post, "r", encoding="utf8") as file:
 			search = re.search(f'<h1 id="{id}">(.*?)</h1>', file.read())
-		content += f"""\n\t\t\t<li><a href="{post}">{search.group(1)}</a>\
+		content += f"""\n\t\t\t<li><a href="/{post}">{search.group(1)}</a>\
 <div class="small-box">{date}</div></li>"""
 	content += "\n\t\t</ul>"
 
