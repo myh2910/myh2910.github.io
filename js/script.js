@@ -59,6 +59,7 @@ InitPage();
 HashLink();
 CheckSpace();
 HideContent();
+CopyCode();
 IconHover();
 
 function InitPage() {
@@ -112,6 +113,23 @@ function HideContent() {
 	$('a.hide-content').click(function() {
 		$(this).next().toggle('fast');
 		return false;
+	});
+}
+
+function CopyCode() {
+	let text = "Copy";
+	$('pre').each(function() {
+		if (navigator.clipboard) {
+			let button = document.createElement("button");
+			button.className = "copy";
+			button.innerText = text;
+			$(this).append(button);
+		}
+	});
+	$('button.copy').click(function() {
+		let code = $(this).parent().text();
+		code = code.substr(0, code.length - text.length);
+		navigator.clipboard.writeText(code);
 	});
 }
 

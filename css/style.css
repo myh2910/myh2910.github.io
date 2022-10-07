@@ -46,8 +46,24 @@ code {
 }
 
 pre {
+	position: relative;
 	overflow: auto;
 	padding: 2px 3px !important;
+}
+
+button.copy {
+	position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+button.copy:hover {
+	cursor: pointer;
+}
+
+button.copy > span {
+	user-select: none;
+	color: #000;
 }
 
 img {

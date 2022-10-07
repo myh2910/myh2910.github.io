@@ -34,8 +34,8 @@ f""">
 		if prettify:
 			file.write(
 f"""
-	<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/\
-run_prettify.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/\
+loader/run_prettify.js"></script>
 	<link rel="stylesheet" href="/css/prettify.css">"""
 			)
 
