@@ -12,3 +12,6 @@ This is the first website created by me. Run `python -m http.server` and go to `
 ## To-do
 
 - [ ] Improve dark and light mode color schemes.
+- [ ] Replace [jQuery](https://jquery.com/) to JavaScript.
+
+	![Needs More jQuery](assets/needs-more-jquery.jpg)
