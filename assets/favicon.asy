@@ -1,8 +1,8 @@
-import olympiad;
-defaultpen(fontsize(10pt));
-// settings.render = 16;
 settings.tex = "pdflatex";
 settings.outformat = "png";
+
+import olympiad;
+defaultpen(fontsize(10pt)+linewidth(0.6));
 size(6cm);
 
 pair O = origin;
@@ -25,7 +25,6 @@ filldraw(circle(OA, abs(N-OA)), opacity(0.3)+lightgreen, cyan+blue);
 
 markscalefactor = 0.01;
 draw(rightanglemark(N, I, A), brown);
-
 draw(MA--MB, dotted);
 draw(A--I--N, orange);
 

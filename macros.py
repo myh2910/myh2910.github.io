@@ -81,7 +81,7 @@ def new_post(date, title, id, content=None, **kwargs):
 		<++>"""
 
 	with open("blog.log", "a", encoding="utf8") as file:
-		file.write(f"{date} {id}")
+		file.write(f"{date} {id}\n")
 
 	new_page(f"blog/{date}-{id}.html", title, content, **kwargs)
 
