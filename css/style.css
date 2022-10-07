@@ -37,7 +37,7 @@ pre {
 	border-radius: 2px;
 	background-color: var(--box-bgcolor);
 	font-size: 90%;
-	font-family: "Consolas";
+	font-family: "Consolas", monospace;
 	tab-size: 2;
 }
 
@@ -46,19 +46,28 @@ code {
 }
 
 pre {
-	position: relative;
 	overflow: auto;
 	padding: 2px 3px !important;
 }
 
 button.copy {
 	position: absolute;
-  top: 5px;
-  right: 5px;
+  top: 4px;
+  right: 4px;
+	border-radius: 4px;
+	border: 2px solid #333;
+	padding: 2px 4px;
+	opacity: 0.4;
+	background-color: #fff;
 }
 
 button.copy:hover {
 	cursor: pointer;
+	opacity: 0.7;
+}
+
+button.copy:active {
+	opacity: 0.9;
 }
 
 button.copy > span {
@@ -474,12 +483,8 @@ ol.playlist > li:before {
 
 ol.playlist > li.active-audio:before,
 ol.playlist > li.active-audio > a {
-	color: #111;
-}
-
-ol.playlist > li.active-audio > a {
-	text-decoration: none;
 	text-shadow: 0 0 1px;
+	color: #232323;
 }
 
 ol.playlist > li > a {
@@ -489,8 +494,7 @@ ol.playlist > li > a {
 }
 
 ol.playlist > li > a:hover {
-	text-decoration: none;
-	text-shadow: 0 0 3px;
+	text-decoration: underline 2px;
 }
 
 @media (prefers-color-scheme: dark) {

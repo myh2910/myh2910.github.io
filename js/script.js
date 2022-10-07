@@ -123,7 +123,8 @@ function CopyCode() {
 			let button = document.createElement("button");
 			button.className = "copy";
 			button.innerText = text;
-			$(this).append(button);
+			$(this).wrap('<div style="position: relative;"></div>');
+			$(this).parent().append(button);
 		}
 	});
 	$('button.copy').click(function() {
