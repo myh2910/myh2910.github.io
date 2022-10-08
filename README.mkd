@@ -4,7 +4,7 @@ This is the first website created by me. Run `python -m http.server` and go to `
 
 ## Notes
 
-- CSS rule order from <https://9elements.com/css-rule-order/>.
+- I'm following CSS rule order from [9elements](https://9elements.com/css-rule-order/).
 - The source code of the [Dinosaur Game](https://en.wikipedia.org/wiki/Dinosaur_Game) is from [here](https://github.com/chromium/chromium/tree/main/components/neterror).
 - If you are using Firefox Android, go to `Settings -> Customize -> Gestures`
 	and unselect `Scroll to hide toolbar` mode.

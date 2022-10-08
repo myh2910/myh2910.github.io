@@ -1,3 +1,4 @@
+import os
 import re
 
 
@@ -86,10 +87,18 @@ def new_post(date, title, id, content=None, **kwargs):
 	new_page(f"blog/{date}-{id}.html", title, content, **kwargs)
 
 def update_blog(filename="blog.html", title="Blog", **kwargs):
-	content = f'<h1 id="blog">My Personal Blog</h1>\n\t\t<ul>'
+	if os.path.exists(filename):
+		with open(filename, "r", encoding="utf8") as file:
+			search = re.search('<div class="container">\n\t\t(.*)(?=\n\t\t<ul>)',
+				file.read(), re.DOTALL)
+		content = search.group(1)
+	else:
+		content = '<h1 id="blog">My Personal Blog</h1>'
+
 	with open("blog.log", "r", encoding="utf8") as file:
 		posts = [line.split() for line in file.readlines()[::-1]]
 
+	content += "\n\t\t<ul>"
 	for date, id in posts:
 		post = f"blog/{date}-{id}.html"
 		with open(post, "r", encoding="utf8") as file:
