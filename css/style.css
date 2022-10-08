@@ -50,7 +50,7 @@ pre {
 	padding: 2px 3px !important;
 }
 
-button.copy {
+button {
 	position: absolute;
   top: 4px;
   right: 4px;
@@ -59,20 +59,16 @@ button.copy {
 	padding: 2px 4px;
 	opacity: 0.4;
 	background-color: #fff;
+	color: #000;
 }
 
-button.copy:hover {
+button:hover {
 	cursor: pointer;
 	opacity: 0.7;
 }
 
-button.copy:active {
+button:active {
 	opacity: 0.9;
-}
-
-button.copy > span {
-	user-select: none;
-	color: #000;
 }
 
 img {
@@ -80,7 +76,7 @@ img {
 	background-color: #fff;
 }
 
-img.latexcenter {
+img.center {
 	display: block;
 	margin: 15px auto;
 	box-sizing: content-box;
@@ -162,17 +158,17 @@ div.small-box {
 	color: gray;
 }
 
-div.posted-date {
+div.date {
 	margin-left: 0.5em;
 	font-size: 90%;
 	color: gray;
 }
 
-div.posted-date:before {
+div.date:before {
 	content: "🕒 Posted on ";
 }
 
-div.posted-date + hr {
+div.date + hr {
 	margin-bottom: 15px;
 }
 
@@ -181,41 +177,20 @@ div.container li {
 	margin: 4px 0;
 }
 
-ul.square {
-	list-style: square;
-}
-
-ul.square ul {
-	list-style: none;
-}
-
-ul.square ul > li {
-	position: relative;
-}
-
-ul.square ul > li:before {
-	content: "\25A1";
-	position: absolute;
-	top: 2px;
-	left: -20px;
-	font-size: 15px;
-	text-align: center;
-}
-
-ol.custom {
+ol.box {
 	counter-reset: list-counter;
 	list-style: none;
 }
 
-ol.custom > li {
+ol.box > li {
 	counter-increment: list-counter;
 	position: relative;
 	left: 10px;
-	margin-bottom: 15px;
+	margin-bottom: 18px;
 	margin-right: 10px;
 }
 
-ol.custom > li:before {
+ol.box > li:before {
 	content: counter(list-counter);
 	position: absolute;
 	top: -1px;
@@ -227,33 +202,8 @@ ol.custom > li:before {
 	font-family: "Trebuchet MS", sans-serif;
 	font-weight: bold;
 	text-align: center;
-	background: #ecf1ff;
+	background-color: #ecf1ff;
 	color: #3c3cc0;
-}
-
-ul.custom-square {
-	list-style: square;
-}
-
-ul.custom-square > li {
-	padding: 7px 0;
-}
-
-ol.par-alpha {
-	counter-reset: list-counter;
-	list-style: none;
-}
-
-ol.par-alpha > li {
-	counter-increment: list-counter;
-	position: relative;
-	padding: 7px 0;
-}
-
-ol.par-alpha > li:before {
-	content: counter(list-counter, lower-alpha) ")";
-	position: absolute;
-	left: -26px;
 }
 
 .checkbox::marker {
@@ -389,7 +339,7 @@ div.icon-facebook {
 }
 
 /* Dropdown */
-div.hide-content {
+div.hidden {
 	position: sticky;
 	display: none;
 	margin: 10px 0;
@@ -402,7 +352,7 @@ div.hide-content {
 	color: #555;
 }
 
-a.hide-content {
+a.hidden {
 	border-radius: 3px;
 	padding: 0 4px;
 	background-color: #2f53a0;
@@ -411,7 +361,7 @@ a.hide-content {
 	color: #fff;
 }
 
-a.hide-content:hover {
+a.hidden:hover {
 	background-color: #2b3586;
 	color: #fff;
 }
@@ -439,7 +389,7 @@ iframe.responsive-iframe {
 /* Playlist */
 audio.playlist {
 	display: block;
-	margin: 30px 0 10px;
+	margin: 20px 0 10px;
 	border-radius: 40px;
 	width: calc(900px - 6px);
 	height: 30px;
@@ -449,7 +399,7 @@ audio.playlist {
 
 div.playlist {
 	overflow-y: scroll;
-	margin-bottom: 30px;
+	margin-bottom: 20px;
 	border-radius: 15px;
 	width: 900px;
 	max-height: 170px;
@@ -529,22 +479,22 @@ ol.playlist > li > a:hover {
 	}
 
 	/* Lists */
-	ol.custom > li:before {
+	ol.box > li:before {
 		border-color: #ff8272;
 		background-color: #8d4540;
 		color: #fff;
 	}
 
 	/* Dropdown */
-	a.hide-content {
+	a.hidden {
 		background-color: #2d39a7;
 	}
 
-	a.hide-content:hover {
+	a.hidden:hover {
 		background-color: #3c4ac9;
 	}
 
-	div.hide-content {
+	div.hidden {
 		color: #bbb;
 	}
 
@@ -563,7 +513,7 @@ ol.playlist > li > a:hover {
 
 	/* Playlist */
 	audio.playlist {
-		margin: 30px 0 6px;
+		margin: 20px 0 6px;
 		width: calc(100% - 6px);
 	}
 
@@ -582,41 +532,17 @@ ol.playlist > li > a:hover {
 	}
 
 	/* Lists */
-	ul.square ul > li {
-		left: -20px;
-	}
-
-	ul.square ul > li:before {
-		left: -10px;
-		font-size: 8px;
-	}
-
-	ol.custom > li {
+	ol.box > li {
 		left: -17px;
-		margin-bottom: 8px;
 		margin-right: -18px;
 	}
 
-	ol.custom > li:before {
+	ol.box > li:before {
 		top: 2px;
 		left: -22px;
 		border-width: 1px;
 		padding: 1px 2.6px 1px 2.6px;
 		line-height: 12px;
-	}
-
-	ul.custom-square > li {
-		margin-left: -17px;
-		padding: 5px 0;
-	}
-
-	ol.par-alpha > li {
-		margin-left: -17px;
-		padding: 5px 0;
-	}
-
-	ol.par-alpha > li:before {
-		left: -15px;
 	}
 
 	.checkbox > input {
@@ -659,15 +585,15 @@ ol.playlist > li > a:hover {
 	}
 
 	/* Dropdown */
-	div.hide-content {
+	div.hidden {
 		margin: 4px 0;
 		border-width: 1px;
 		border-radius: 8px;
 		padding: 9px;
 	}
 
-	a.hide-content:link,
-	a.hide-content:visited {
+	a.hidden:link,
+	a.hidden:visited {
 		border-radius: 2px;
 		padding: 0 2px;
 	}
@@ -681,7 +607,7 @@ ol.playlist > li > a:hover {
 
 	/* Playlist */
 	audio.playlist {
-		margin: 14px 0 1px;
+		margin: 14px 0 3px;
 		border-radius: 20px;
 		width: calc(100% - 4px);
 		height: 24px;

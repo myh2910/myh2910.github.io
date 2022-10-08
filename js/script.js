@@ -1,5 +1,4 @@
-$('div.container').before(
-`<ul class="topnav">
+const topnavHTML = `<ul class="topnav">
 	<li><a href="/index.html">Home</a></li>
 	<li><a href="/blog.html">Blog</a></li>
 	<li class="dropdown">
@@ -14,15 +13,13 @@ $('div.container').before(
 	<li class="dropdown">
 		<a class="dropdown">Hobbies <span class="caret"></span></a>
 		<ul class="dropdown-menu">
-			<li><a href="/music.html">Music</a></li>
 			<li><a href="/coding.html">Coding</a></li>
+			<li><a href="/music.html">Music</a></li>
 			<li><a href="/paper_craft.html">Paper Craft</a></li>
 		</ul>
 	</li>
-</ul>`
-);
-$('div.container').after(
-`<div class="footer">
+</ul>`;
+const footerHTML = `<div class="footer">
 	<span>&copy; 2022 Yohan Min</span>
 	<div class="icon icon-github">
 		<a href="https://github.com/myh2910" target="_blank">
@@ -52,105 +49,115 @@ $('div.container').after(
 			</svg>
 		</a>
 	</div>
-</div>`
-);
+</div>`;
 
-InitPage();
-HashLink();
-CheckSpace();
-HideContent();
-CopyCode();
-IconHover();
+initPage();
 
-function InitPage() {
-	const footerHeight = $('div.footer').outerHeight();
-	$('div.container').css('margin-bottom', `calc(${footerHeight}px + ${$('div.container').css('marginLeft')})`);
-	const href = $('head').attr('data-href');
+function initPage() {
+	// Insert navigation bar and footer
+	const container = document.querySelector('div.container');
+	container.insertAdjacentHTML('beforebegin', topnavHTML);
+	container.insertAdjacentHTML('afterend', footerHTML);
+
+	// Add bottom margin
+	const footerHeight = document.querySelector('div.footer').offsetHeight;
+	const marginLeft = window.getComputedStyle(container).getPropertyValue('margin-left');
+	container.style.marginBottom = `calc(${footerHeight}px + ${marginLeft} + 8px)`;
+
+	// Highlight current page
+	const href = document.querySelector('head').getAttribute('data-href');
 	if (href) {
-		$(`ul.topnav li > a[href='${href}']`).attr('class', 'active');
+		document.querySelector(`ul.topnav li > a[href='${href}']`).setAttribute('class', 'active');
 	}
-}
 
-function HashLink() {
-	$('div.container').find('h1, h2, h3').each(function() {
-		const id = $(this).attr('id');
+	// Insert hash link
+	container.querySelectorAll('h1, h2, h3').forEach(el => {
+		const id = el.getAttribute('id');
 		if (id) {
-			$(this).append(`<a class="hash-link" href="#${id}">#</a>`);
+			el.insertAdjacentHTML('beforeend', `<a class="hash-link" href="#${id}">#</a>`);
 		}
 	});
-	$('div.container').css('display', 'block');
+
+	// Show page content
+	container.style.display = 'block';
+
+	// Scroll to hash on load
 	const hash = window.location.hash;
 	if (hash) {
 		let target = $(hash);
 		$(window).on('load', () => {
-			$('html').animate({
-				scrollTop: target.offset().top - target.find('a.hash-link').height()
-			}, 'fast');
+			$('html').animate({scrollTop: target.offset().top - target.find('a.hash-link').height()}, 'fast');
 		});
 	}
+
+	// Scroll to hash on click
 	$('a.hash-link').click(function() {
 		$('html').animate({
 			scrollTop: $(this).parent().offset().top - $(this).height()
 		}, 'fast');
 	});
-}
 
-function CheckSpace() {
+	// Adjust dropdown menu position
 	const windowWidth = document.body.clientWidth;
-	$('ul.dropdown-menu').each(function() {
-		let menuBound = this.getBoundingClientRect();
+	document.querySelectorAll('ul.dropdown-menu').forEach(el => {
+		const menuBound = el.getBoundingClientRect();
 		if (menuBound.width + menuBound.x > windowWidth) {
-			$(this).css('right', '0');
+			el.style.right = '0';
 		}
-		$(this).hide();
+		el.style.display = 'none';
 	});
-	$('li.dropdown').hover(function() {
-		$(this).find('ul.dropdown-menu').toggle();
-	});
-}
 
-function HideContent() {
-	$('a.hide-content').click(function() {
-		$(this).next().toggle('fast');
-		return false;
+	// Toggle dropdown menu on hover
+	document.querySelectorAll('li.dropdown').forEach(el => {
+		const menu = el.querySelector('ul.dropdown-menu');
+		el.onmouseover = () => { menu.style.display = 'block' };
+		el.onmouseout = () => { menu.style.display = 'none' };
 	});
-}
 
-function CopyCode() {
-	let text = "Copy";
-	$('pre').each(function() {
+	// Toggle hidden content on click
+	document.querySelectorAll('a.hidden').forEach(el => {
+		el.onclick = () => {
+			$(el).next().toggle('fast');
+			return false;
+		};
+	});
+
+	// Copy pre content on click
+	document.querySelectorAll('pre').forEach(el => {
 		if (navigator.clipboard) {
-			let button = document.createElement("button");
-			button.className = "copy";
-			button.innerText = text;
-			$(this).wrap('<div style="position: relative;"></div>');
-			$(this).parent().append(button);
+			let wrapper = document.createElement('div');
+			wrapper.style.position = 'relative';
+			el.parentElement.insertBefore(wrapper, el);
+			wrapper.appendChild(el);
+			let button = document.createElement('button');
+			button.innerText = 'Copy';
+			button.onclick = () => {
+				navigator.clipboard.writeText(el.textContent);
+			};
+			el.parentElement.appendChild(button);
 		}
 	});
-	$('button.copy').click(function() {
-		let code = $(this).parent().text();
-		code = code.substr(0, code.length - text.length);
-		navigator.clipboard.writeText(code);
-	});
-}
 
-function IconHover() {
-	$('div.icon-facebook').hover(function() {
-		let link = $(this).find('svg path');
-		link.attr('fill', 'url(#gradient-facebook)');
-		link.next().attr('fill', '#fff');
-	}, function() {
-		let link = $(this).find('svg path');
-		link.attr('fill', '#fff');
-		link.next().attr('fill', 'var(--bgcolor-1)');
-	});
-	$('div.icon-github').hover(function() {
-		let link = $(this).find('svg path');
-		link.attr('fill', '#fff');
-		link.next().attr('fill', 'url(#gradient-github)');
-	}, function() {
-		let link = $(this).find('svg path');
-		link.attr('fill', 'var(--bgcolor-1)');
-		link.next().attr('fill', '#fff');
-	});
+	// Animate icon style on hover
+	const facebookIcon = document.querySelector('div.icon-facebook');
+	const facebookPath = facebookIcon.querySelector('svg path');
+	facebookIcon.onmouseover = () => {
+		facebookPath.setAttribute('fill', 'url(#gradient-facebook)');
+		facebookPath.nextElementSibling.setAttribute('fill', '#fff');
+	};
+	facebookIcon.onmouseout = () => {
+		facebookPath.setAttribute('fill', '#fff');
+		facebookPath.nextElementSibling.setAttribute('fill', 'var(--bgcolor-1)');
+	};
+
+	const githubIcon = document.querySelector('div.icon-github');
+	const githubPath = githubIcon.querySelector('svg path');
+	githubIcon.onmouseover = () => {
+		githubPath.setAttribute('fill', '#fff');
+		githubPath.nextElementSibling.setAttribute('fill', 'url(#gradient-github)');
+	};
+	githubIcon.onmouseout = () => {
+		githubPath.setAttribute('fill', 'var(--bgcolor-1)');
+		githubPath.nextElementSibling.setAttribute('fill', '#fff');
+	};
 }
