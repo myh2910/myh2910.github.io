@@ -221,13 +221,14 @@ ol.custom > li:before {
 	top: -1px;
 	left: -36px;
 	box-shadow: var(--box-shadow);
-	border: 2px solid #44f;
+	border: 2px solid #4558fd;
 	padding: 0 5px;
 	line-height: 20px;
 	font-family: "Trebuchet MS", sans-serif;
 	font-weight: bold;
 	text-align: center;
-	color: #00f;
+	background: #ecf1ff;
+	color: #3c3cc0;
 }
 
 ul.custom-square {
@@ -529,8 +530,9 @@ ol.playlist > li > a:hover {
 
 	/* Lists */
 	ol.custom > li:before {
-		border-color: #72aaff;
-		color: #cbdffd;
+		border-color: #ff8272;
+		background-color: #8d4540;
+		color: #fff;
 	}
 
 	/* Dropdown */
