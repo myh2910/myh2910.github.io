@@ -404,14 +404,14 @@ div.hide-content {
 a.hide-content {
 	border-radius: 3px;
 	padding: 0 4px;
-	background-color: coral;
+	background-color: #2f53a0;
 	cursor: pointer;
 	text-decoration: none;
 	color: #fff;
 }
 
 a.hide-content:hover {
-	background-color: tomato;
+	background-color: #2b3586;
 	color: #fff;
 }
 
@@ -443,7 +443,7 @@ audio.playlist {
 	width: calc(900px - 6px);
 	height: 30px;
 	padding: 3px;
-	background-color: #4fafa9;
+	background-color: #c9485d;
 }
 
 div.playlist {
@@ -453,7 +453,7 @@ div.playlist {
 	width: 900px;
 	max-height: 170px;
 	padding: 5px;
-	background-color: #4fafa9;
+	background-color: #c9485d;
 }
 
 ol.playlist {
@@ -499,7 +499,7 @@ ol.playlist > li > a:hover {
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--heading-color: #53c366;
+		--heading-color: #9cddb2;
 		--box-shadow: 0 8px 16px 0 rgba(100, 100, 100, 0.2);
 		--box-bgcolor: #2a2a21;
 		--box-border: 1px solid rgba(100, 100, 100, 0.3);
@@ -513,7 +513,7 @@ ol.playlist > li > a:hover {
 	/* Links */
 	a:link,
 	a:visited {
-		color: #50b0e7;
+		color: #74c9fa;
 	}
 
 	a:hover {
@@ -529,17 +529,17 @@ ol.playlist > li > a:hover {
 
 	/* Lists */
 	ol.custom > li:before {
-		border-color: #5570ff;
-		color: #ddf;
+		border-color: #72aaff;
+		color: #cbdffd;
 	}
 
 	/* Dropdown */
 	a.hide-content {
-		background-color: #853b2d;
+		background-color: #2d39a7;
 	}
 
 	a.hide-content:hover {
-		background-color: #7a2616;
+		background-color: #3c4ac9;
 	}
 
 	div.hide-content {
@@ -549,7 +549,7 @@ ol.playlist > li > a:hover {
 	/* Playlist */
 	audio.playlist,
 	div.playlist {
-		background-color: #55998e;
+		background-color: #b94155;
 	}
 }
 
