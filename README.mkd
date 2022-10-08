@@ -1,6 +1,6 @@
 # [myh2910.github.io](https://myh2910.github.io)
 
-This is the first website created by me. Run `python -m http.server` and go to `localhost:8000` to host this website.
+This is my first website. Run `python -m http.server` and go to `localhost:8000` to host this website.
 
 ## Notes
 
