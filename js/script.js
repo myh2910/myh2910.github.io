@@ -15,7 +15,7 @@ $('div.container').before(
 		<a class="dropdown">Hobbies <span class="caret"></span></a>
 		<ul class="dropdown-menu">
 			<li><a href="/music.html">Music</a></li>
-			<li><a href="/python.html">Python</a></li>
+			<li><a href="/coding.html">Coding</a></li>
 			<li><a href="/paper_craft.html">Paper Craft</a></li>
 		</ul>
 	</li>
