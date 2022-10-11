@@ -5,7 +5,7 @@
 	--heading-color: darkcyan;
 	--box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 	--box-bgcolor: ghostwhite;
-	--box-border: 1px solid rgba(0, 0, 0, 0.15);
+	--box-border: rgba(0, 0, 0, 0.15);
 }
 
 .MathJax {
@@ -33,7 +33,7 @@ div.right-align {
 
 code,
 pre {
-	border: var(--box-border) !important;
+	border: 1px solid var(--box-border) !important;
 	border-radius: 2px;
 	background-color: var(--box-bgcolor);
 	font-size: 90%;
@@ -48,6 +48,16 @@ code {
 pre {
 	overflow: auto;
 	padding: 2px 3px !important;
+}
+
+kbd {
+	box-shadow: inset 0 -1px 0 var(--box-border);
+	border: 1px solid var(--box-border) !important;
+	border-radius: 6px;
+	padding: 1.4px 3px;
+	background-color: var(--box-bgcolor);
+	font-size: 80%;
+	font-family: "Consolas", monospace;
 }
 
 button {
@@ -150,7 +160,7 @@ a.hash-link:hover {
 div.small-box {
 	display: inline-block;
 	margin-left: 0.6em;
-	border: var(--box-border);
+	border: 1px solid var(--box-border);
 	border-radius: 7px;
 	padding: 0 2.5px;
 	background-color: var(--box-bgcolor);
@@ -271,7 +281,7 @@ ul.dropdown-menu {
 	overflow: hidden;
 	margin-top: -2px;
 	box-shadow: var(--box-shadow);
-	border: var(--box-border);
+	border: 1px solid var(--box-border);
 	border-radius: 4px;
 	padding: 0;
 	background-color: #fff;
@@ -344,7 +354,7 @@ div.hidden {
 	display: none;
 	margin: 10px 0;
 	box-shadow: var(--box-shadow);
-	border: var(--box-border);
+	border: 1px solid var(--box-border);
 	border-radius: 10px;
 	padding: 12px;
 	background-color: var(--box-bgcolor);
@@ -453,7 +463,7 @@ ol.playlist > li > a:hover {
 		--heading-color: #9cddb2;
 		--box-shadow: 0 8px 16px 0 rgba(100, 100, 100, 0.2);
 		--box-bgcolor: #2a2a21;
-		--box-border: 1px solid rgba(100, 100, 100, 0.3);
+		--box-border: rgba(100, 100, 100, 0.3);
 	}
 
 	body {
