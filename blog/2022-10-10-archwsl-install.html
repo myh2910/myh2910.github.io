@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Installing ArchWSL</title>
+	<link rel="icon" href="/assets/favicon.png">
+	<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+	<div class="container">
+		<h1 id="archwsl-install">Installing ArchWSL</h1>
+		<div class="date">2022-10-10</div>
+		<hr>
+		<p>I wanted to execute bash in Windows, so I installed ArchWSL. Here are the steps.</p>
+		<ul>
+			<li>First, install <a href="https://github.com/yuk7/ArchWSL" target="_blank">ArchWSL</a> and unzip <code>Arch.zip</code> into a folder.</li>
+			<li>Execute <code>Arch.exe</code> and press <kbd>Enter</kbd>.</li>
+			<li>Execute <code>Arch.exe</code> again and follow the next steps.</li>
+			<ul>
+				<li>Set root password by <code>passwd</code>.</li>
+				<li>Open <code>/etc/sudoers</code> and uncomment <code>%wheel ALL=(ALL:ALL) ALL</code>.</li>
+				<li>Add user by <code>useradd -m -G wheel,audio,video {username}</code>.</li>
+				<li>Set user password by <code>passwd {username}</code>.</li>
+			</ul>
+			<li>Exit and run <code>Arch.exe config --default-user {username}</code> to set default user.</li>
+			<li>To initialize the keyring and use pacman, execute the following commands.</li>
+			<ul>
+				<li><code>sudo pacman-key --init</code></li>
+				<li><code>sudo pacman-key --populate</code></li>
+				<li><code>sudo pacman -Sy archlinux-keyring</code></li>
+				<li><code>sudo pacman -Su</code></li>
+			</ul>
+			<li>To check the WSL version, execute <code>wsl -l -v</code>.</li>
+			<li>To uninstall, run <code>wslconfig.exe /unregister arch</code> and remove the files.</li>
+		</ul>
+		<p>See the <a href="https://wsldl-pg.github.io/ArchW-docs/How-to-Setup/" target="_blank">ArchWSL documentation</a> for more information.</p>
+		<p>You may also want to customize your terminal. Install <a href="https://www.ohmyposh.dev/" target="_blank">Oh My Posh</a> and see <a href="https://www.hanselman.com/blog/my-ultimate-powershell-prompt-with-oh-my-posh-and-the-windows-terminal" target="_blank">this</a>.</p>
+	</div>
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/script.js"></script>
+</body>
+</html>
