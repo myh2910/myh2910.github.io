@@ -21,7 +21,7 @@ const topnavHTML = `<ul class="topnav">
   </li>
 </ul>`;
 const footerHTML = `<div class="footer">
-  <span>&copy; 2022 Yohan Min</span>
+  <span>&copy; 2023 Yohan Min</span>
   <div class="icon icon-github">
     <a href="https://github.com/myh2910" target="_blank">
       <svg viewBox="0 0 16 16" aria-hidden="true">
