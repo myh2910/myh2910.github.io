@@ -1,27 +1,28 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width">
-	<title>Comments on LaTeX Style documents</title>
-	<link rel="icon" href="/assets/favicon.png">
-	<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
-	<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/src/lang-tex.js"></script>
-	<link rel="stylesheet" href="/css/prettify.css">
-	<link rel="stylesheet" href="/css/style.css">
-</head>
-<body>
-	<div class="container">
-		<h1 id="latex-style-comments">Comments on LaTeX Style Documents</h1>
-		<div class="date">2022-10-07</div>
-		<hr>
-		<ul>
-			<li>Include <code>loadshadowlibrary</code> and <code>shadow</code> options to enable shadow when using <a href="https://ctan.org/pkg/todonotes" target="_blank">todonotes</a> package.</li>
-			<li>Use <a href="https://mirrors.ctan.org/macros/latex/contrib/koma-script/doc/scrguide-en.pdf#chapter.16" target="_blank">scrhack</a> package in <a href="https://ctan.org/pkg/koma-script" target="_blank">KOMA-Script</a> classes (<a href="https://ctan.org/pkg/scrartcl" target="_blank">scrartcl</a>, <a href="https://ctan.org/pkg/scrreprt" target="_blank">scrreprt</a> and <a href="https://ctan.org/pkg/scrbook" target="_blank">scrbook</a>) to disable some error messages. See also <a href="https://tex.stackexchange.com/questions/73141/why-should-i-not-use-the-koma-script-classes" target="_blank">this question</a> in Stack Exchange.</li>
-			<li>Check <a href="https://github.com/vEnhance/dotfiles/blob/main/texmf/tex/latex/evan/evan.sty" target="_blank">dotfiles/evan.sty</a> and <a href="https://github.com/vEnhance/napkin/blob/main/tex/preamble.tex" target="_blank">napkin/preamble.tex</a> from Evan Chen for some examples.</li>
-		</ul>
-		<p>See this modified LaTeX style document.</p>
-		<pre class="prettyprint lang-tex">% evan.sty
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Comments on LaTeX Style documents</title>
+    <link rel="icon" href="/assets/favicon.png" />
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/src/lang-tex.js"></script>
+    <link rel="stylesheet" href="/css/prettify.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 id="latex-style-comments">Comments on LaTeX Style Documents</h1>
+      <div class="date">2022-10-07</div>
+      <hr />
+      <ul>
+        <li>Include <code>loadshadowlibrary</code> and <code>shadow</code> options to enable shadow when using <a href="https://ctan.org/pkg/todonotes" target="_blank">todonotes</a> package.</li>
+        <li>Use <a href="https://mirrors.ctan.org/macros/latex/contrib/koma-script/doc/scrguide-en.pdf#chapter.16" target="_blank">scrhack</a> package in <a href="https://ctan.org/pkg/koma-script" target="_blank">KOMA-Script</a> classes (<a href="https://ctan.org/pkg/scrartcl" target="_blank">scrartcl</a>, <a href="https://ctan.org/pkg/scrreprt" target="_blank">scrreprt</a> and <a href="https://ctan.org/pkg/scrbook" target="_blank">scrbook</a>) to disable some error messages. See also <a href="https://tex.stackexchange.com/questions/73141/why-should-i-not-use-the-koma-script-classes" target="_blank">this question</a> in Stack Exchange.</li>
+        <li>Check <a href="https://github.com/vEnhance/dotfiles/blob/main/texmf/tex/latex/evan/evan.sty" target="_blank">dotfiles/evan.sty</a> and <a href="https://github.com/vEnhance/napkin/blob/main/tex/preamble.tex" target="_blank">napkin/preamble.tex</a> from Evan Chen for some examples.</li>
+      </ul>
+      <p>See this modified LaTeX style document.</p>
+      <pre class="prettyprint lang-tex">
+% evan.sty
 % If you don't know how to use this file, read:
 % https://web.evanchen.cc/faq-latex.html#L-4
 ...
@@ -29,9 +30,10 @@
 \usepackage{scrhack}
 ...
 \usepackage[obeyFinal,textsize=scriptsize,loadshadowlibrary,shadow]{todonotes}
-...</pre>
-	</div>
-	<script src="/js/jquery.min.js"></script>
-	<script src="/js/script.js"></script>
-</body>
+...</pre
+      >
+    </div>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/script.js"></script>
+  </body>
 </html>
