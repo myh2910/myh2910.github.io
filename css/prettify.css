@@ -6,43 +6,103 @@
  * https://jmblog.github.io/color-themes-for-google-code-prettify */
 
 /* GitHub v2 */
-.pln {color: #333;}
+.pln {
+  color: #333;
+}
 
 @media screen {
-	.str {color: #183691;} /* string content */
-	.kwd {color: #a71d5d;} /* keyword */
-	.com {color: #969896;} /* comment */
-	.typ {color: #0086b3;} /* type name */
-	.lit {color: #0086b3;} /* literal value */
-	.pun {color: #333;}    /* punctuation */
-	.opn {color: #333;}    /* lisp open bracket */
-	.clo {color: #333;}    /* lisp close bracket */
-	.tag {color: #000080;} /* markup tag name */
-	.atn {color: #795da3;} /* markup attribute name */
-	.atv {color: #183691;} /* markup attribute value */
-	.dec {color: #333;}    /* declaration */
-	.var {color: #008080;} /* variable name */
-	.fun {color: #900;}    /* function name */
+  .str {
+    color: #183691;
+  } /* string content */
+  .kwd {
+    color: #a71d5d;
+  } /* keyword */
+  .com {
+    color: #969896;
+  } /* comment */
+  .typ {
+    color: #0086b3;
+  } /* type name */
+  .lit {
+    color: #0086b3;
+  } /* literal value */
+  .pun {
+    color: #333;
+  } /* punctuation */
+  .opn {
+    color: #333;
+  } /* lisp open bracket */
+  .clo {
+    color: #333;
+  } /* lisp close bracket */
+  .tag {
+    color: #000080;
+  } /* markup tag name */
+  .atn {
+    color: #795da3;
+  } /* markup attribute name */
+  .atv {
+    color: #183691;
+  } /* markup attribute value */
+  .dec {
+    color: #333;
+  } /* declaration */
+  .var {
+    color: #008080;
+  } /* variable name */
+  .fun {
+    color: #900;
+  } /* function name */
 }
 
 @media (prefers-color-scheme: dark) {
-	/* Tomorrow Night Bright */
-	.pln {color: #eaeaea;}
+  /* Tomorrow Night Bright */
+  .pln {
+    color: #eaeaea;
+  }
 
-	@media screen {
-		.str {color: #b9ca4a;} /* string content */
-		.kwd {color: #c397d8;} /* keyword */
-		.com {color: #969896;} /* comment */
-		.typ {color: #7aa6da;} /* type name */
-		.lit {color: #e78c45;} /* literal value */
-		.pun {color: #eaeaea;}    /* punctuation */
-		.opn {color: #eaeaea;}    /* lisp open bracket */
-		.clo {color: #eaeaea;}    /* lisp close bracket */
-		.tag {color: #d54e53;} /* markup tag name */
-		.atn {color: #e78c45;} /* markup attribute name */
-		.atv {color: #70c0b1;} /* markup attribute value */
-		.dec {color: #e78c45;}    /* declaration */
-		.var {color: #d54e53;} /* variable name */
-		.fun {color: #7aa6da;}    /* function name */
-	}
+  @media screen {
+    .str {
+      color: #b9ca4a;
+    } /* string content */
+    .kwd {
+      color: #c397d8;
+    } /* keyword */
+    .com {
+      color: #969896;
+    } /* comment */
+    .typ {
+      color: #7aa6da;
+    } /* type name */
+    .lit {
+      color: #e78c45;
+    } /* literal value */
+    .pun {
+      color: #eaeaea;
+    } /* punctuation */
+    .opn {
+      color: #eaeaea;
+    } /* lisp open bracket */
+    .clo {
+      color: #eaeaea;
+    } /* lisp close bracket */
+    .tag {
+      color: #d54e53;
+    } /* markup tag name */
+    .atn {
+      color: #e78c45;
+    } /* markup attribute name */
+    .atv {
+      color: #70c0b1;
+    } /* markup attribute value */
+    .dec {
+      color: #e78c45;
+    } /* declaration */
+    .var {
+      color: #d54e53;
+    } /* variable name */
+    .fun {
+      color: #7aa6da;
+    } /* function name */
+  }
 }
