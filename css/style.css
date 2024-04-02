@@ -549,13 +549,13 @@ ol.playlist > li > a:hover {
 
   /* Lists */
   ol.box > li {
-    left: -17px;
-    margin-right: -18px;
+    left: 0;
+    margin-right: 0;
   }
 
   ol.box > li:before {
     top: 2px;
-    left: -22px;
+    left: -24px;
     border-width: 1px;
     padding: 1px 2.6px 1px 2.6px;
     line-height: 12px;
